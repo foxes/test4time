@@ -13,7 +13,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Random;
 
-
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.os.SystemClock;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -46,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         buttonRefresh = (Button) findViewById(R.id.refreshButton);
 
 
-        middleText.setText( "" + stepGoal);
+        middleText.setText("" + stepGoal);
 
         final SeekBar seekBarProgress;
         seekBarProgress = (SeekBar) findViewById(R.id.seekBar_progress);
@@ -57,39 +65,40 @@ public class MainActivity extends AppCompatActivity {
         seekBarProgress.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                if(b){
+                if (b) {
                     circleProgressBar.setProgressWithAnimation(i);
                     // middleText.setText( "" + (int)  circleProgressBar.getProgress() );
 
                     sliderPercent = i;
-                    StepCounting = stepGoal - ( (int)(stepGoal*(i*0.01)) ) ;
+                    StepCounting = stepGoal - ((int) (stepGoal * (i * 0.01)));
                     lowerText.setText("" + i + "%");
-                    middleText.setText( "" + StepCounting ) ;
+                    middleText.setText("" + StepCounting);
 
-                    if (i == 100){
+                    if (i == 100) {
                         lockStatus.setText("UNLOCKED");
                     }
-                    if (i != 100){
+                    if (i != 100) {
                         lockStatus.setText("LOCKED");
                     }
-                }
-                else {
+                } else {
                     circleProgressBar.setProgressWithAnimation(i);
                     sliderPercent = i;
-                    StepCounting = stepGoal - ( (int)(stepGoal*(i*0.01)) ) ;
+                    StepCounting = stepGoal - ((int) (stepGoal * (i * 0.01)));
                     lowerText.setText("" + i + "%");
-                    middleText.setText( "" + StepCounting ) ;
-                    if (i == 100){
+                    middleText.setText("" + StepCounting);
+                    if (i == 100) {
                         lockStatus.setText("UNLOCKED");
                     }
-                    if (i != 100){
+                    if (i != 100) {
                         lockStatus.setText("LOCKED");
                     }
                 }
             }
+
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
             }
+
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
@@ -103,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-
                 final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
                 final View mView = getLayoutInflater().inflate(R.layout.dialog_login, null);
                 final EditText mEmail = (EditText) mView.findViewById(R.id.etPassword);
@@ -113,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 final AlertDialog dialog = mBuilder.create();
                 dialog.show();
 
-                mLogin.setOnClickListener(new View.OnClickListener(){
+                mLogin.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         if (!mEmail.getText().toString().isEmpty()) {
@@ -128,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                             mBuilder.setView(mView);
                             final AlertDialog dialog = mBuilder.create();
                             dialog.show();
-                           // final String unlockTime = mEmail.getText().toString();
+                            // final String unlockTime = mEmail.getText().toString();
 
 
                             //this is all code for the timer dialog menu "confirm". in the future we can put the "lock" functionality here hopefully.
@@ -137,6 +145,8 @@ public class MainActivity extends AppCompatActivity {
                                 public void onClick(View view) {
 
                                     Toast.makeText(MainActivity.this, "lock disabled for " + mEmail.getText().toString() + " minutes", Toast.LENGTH_LONG).show();
+
+                                    startAlarm(true, true);
                                     lockStatus.setText("UNLOCKED");
                                     dialog.dismiss();
 
@@ -144,12 +154,9 @@ public class MainActivity extends AppCompatActivity {
                             });
 
 
-
-
-
                             //this will call another dialog box that lets people put in time
 
-                        }else{
+                        } else {
                             Toast.makeText(MainActivity.this, "bad pin", Toast.LENGTH_SHORT).show();
 
                         }
@@ -175,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
                 final AlertDialog dialog = mBuilder.create();
                 dialog.show();
 
-                mLogin.setOnClickListener(new View.OnClickListener(){
+                mLogin.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         if (!mEmail.getText().toString().isEmpty()) {
@@ -206,13 +213,12 @@ public class MainActivity extends AppCompatActivity {
                                     dialog.dismiss();
 
 
-
                                 }
                             });
 
                             //this will call an activity with the list of apps
 
-                        }else{
+                        } else {
                             Toast.makeText(MainActivity.this, "bad pin", Toast.LENGTH_SHORT).show();
 
                         }
@@ -237,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
                 final AlertDialog dialog = mBuilder.create();
                 dialog.show();
 
-                mLogin.setOnClickListener(new View.OnClickListener(){
+                mLogin.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         if (!mEmail.getText().toString().isEmpty()) {
@@ -266,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             });
 
-                        }else{
+                        } else {
                             Toast.makeText(MainActivity.this, "bad pin", Toast.LENGTH_SHORT).show();
 
                         }
@@ -288,15 +294,38 @@ public class MainActivity extends AppCompatActivity {
                 Random rand = new Random();
                 int n = rand.nextInt(5);
 
-
                 seekBarProgress.setProgress(sliderPercent + n);
 
 
             }
         });
 
-        /////////////////////////////////////////////////////////////////////////////////////////
     }
+        /////////////////////////////////////////////////////////////////////////////////////////
+        private void startAlarm(boolean isNotification, boolean isRepeat) {
+            AlarmManager manager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+            Intent myIntent;
+            PendingIntent pendingIntent;
+
+            if(!isNotification)
+            {
+                myIntent = new Intent(MainActivity.this,AlarmToastReceiver.class);
+                pendingIntent = PendingIntent.getBroadcast(this,0,myIntent,0);
+            }
+            else{
+                myIntent = new Intent(MainActivity.this,AlarmNotificationReceiver.class);
+                pendingIntent = PendingIntent.getBroadcast(this,0,myIntent,0);
+            }
+
+            //if(!isRepeat)
+            manager.set(AlarmManager.RTC_WAKEUP, SystemClock.elapsedRealtime()+100,pendingIntent);
+            // else
+            // manager.setRepeating(AlarmManager.RTC_WAKEUP,SystemClock.elapsedRealtime()+100,100,pendingIntent);
+        }
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+
 }
 
 
