@@ -34,12 +34,17 @@ public class MainActivity extends AppCompatActivity {
     int StepCounting;
     int sliderPercent;
 
+    public static final String OUT_OF_TIME = "outoftime";
+
     //boolean lockStatus;
 
     Button buttonTimer;
     Button buttonLock;
     Button buttonUnLock;
     Button buttonRefresh;
+
+    boolean accessibilityEnabled = false;
+
 
     public static TextView lockStatus;
     public TextView middleText;
@@ -58,6 +63,20 @@ public class MainActivity extends AppCompatActivity {
         buttonLock = (Button) findViewById(R.id.LockButton);
         buttonUnLock = (Button) findViewById(R.id.UnlockButton);
         buttonRefresh = (Button) findViewById(R.id.refreshButton);
+
+
+
+
+        if (!accessibilityEnabled) {
+
+            Intent dialogIntent = new Intent(this, AccessibilityRequestActivity.class);
+            dialogIntent.putExtra(MainActivity.OUT_OF_TIME, true);
+            dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(dialogIntent);
+
+            accessibilityEnabled = true;
+
+        }
 
 
         middleText.setText("" + stepGoal);
@@ -306,7 +325,8 @@ public class MainActivity extends AppCompatActivity {
                 Random rand = new Random();
                 int n = rand.nextInt(5);
 
-                seekBarProgress.setProgress(sliderPercent + n);
+
+                 seekBarProgress.setProgress(sliderPercent + n);
 
 
             }

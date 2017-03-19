@@ -15,6 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="AccessibilityRequestActivity"
+            android:label="Accessibility Request" />
+
+
         <receiver android:name=".AlarmNotificationReceiver"/>
         <receiver android:name=".AlarmToastReceiver"/>
     </application>
