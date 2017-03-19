@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="login"
+        android:text="@string/login"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,12 +19,12 @@
         android:layout_height="wrap_content"
         android:inputType="numberPassword"
         android:ems="10"
-        android:hint="ENTER PIN"
+        android:hint="@string/enter_pin"
         android:gravity="center"
         android:id="@+id/etPassword" />
 
     <Button
-        android:text="enter"
+        android:text="@string/enter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnLogin" />

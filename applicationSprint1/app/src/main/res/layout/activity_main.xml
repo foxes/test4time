@@ -15,7 +15,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.4">
+        android:layout_weight="0.4"
+        tools:ignore="InefficientWeight,UselessParent">
 
 
         <Button
@@ -25,7 +26,8 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_width="45dp"
-            android:layout_height="45dp" />
+            android:layout_height="45dp"
+            tools:ignore="UnusedAttribute" />
 
         <Button
             android:id="@+id/UnlockButton"
@@ -80,7 +82,8 @@
             android:layout_height="50dp"
             android:layout_alignBottom="@+id/custom_progressBar"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            tools:ignore="HardcodedText" />
 
         <TextView
 
@@ -94,13 +97,13 @@
             android:layout_width="400dp"
             android:layout_alignTop="@+id/custom_progressBar"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            tools:ignore="HardcodedText" />
 
         <TextView
 
             android:text="2500"
             android:id="@+id/middleText"
-            android:layout_weight="20"
             android:textAppearance="@style/TextAppearance.AppCompat.Display4"
             android:gravity="center"
             android:textColor="#ffffff"
@@ -109,11 +112,11 @@
             android:layout_alignTop="@+id/upperText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            tools:ignore="HardcodedText" />
 
         <TextView
-            android:text="locked"
-            android:layout_weight="10"
+            android:text="UNLOCKED"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:gravity="right"
             android:id="@+id/lockStatus"
@@ -122,14 +125,14 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:textColor="#ffffff"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            tools:ignore="HardcodedText,RtlHardcoded" />
 
         <com.foxes.capstone.CircleProgressBar
             android:id="@+id/custom_progressBar"
             app:progress="0"
             android:gravity="center"
             app:progressBarThickness="14dp"
-            android:layout_weight="0.33"
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_marginBottom="39dp"

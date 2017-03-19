@@ -2,7 +2,9 @@ package com.foxes.capstone;
 
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Random;
+import java.util.concurrent.locks.Lock;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -28,15 +31,31 @@ import android.widget.RadioButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    int stepCounter = 100;
+
+
+
+
+    //this is the set stepGoal by the parents
     static int stepGoal = 2500;
+
+    //this is the current steps that the kid is on, should pull from fitbit API if possible
+    static int stepCounter = 100;
+
+
+    //this is the time that we'll disable the lock for, if we decide on a default time it could do stuff like unlocking for 60 minutes once step goal is reached
+    //but right now it should just unlock indefinetly until the lock is reset by the parent
     static int lockDisableTime;
+
+
+    //these are just for demoing prior to getting access to fitbit API, so delete them later
     int StepCounting;
     int sliderPercent;
 
     public static final String OUT_OF_TIME = "outoftime";
 
-    //boolean lockStatus;
+    //for setting if lock is on or off
+    static boolean lockOn = true;
+    static String LockString = "LOCKED";
 
     Button buttonTimer;
     Button buttonLock;
@@ -44,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
     Button buttonRefresh;
 
     boolean accessibilityEnabled = false;
-
 
     public static TextView lockStatus;
     public TextView middleText;
@@ -54,6 +72,15 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        //pulling variables from sharedPreferences. basically memory
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        final SharedPreferences.Editor editor = preferences.edit();
+
+        stepGoal = preferences.getInt("stepGoal",stepGoal);
+        stepGoal = preferences.getInt("stepGoal",stepGoal);
+
 
         lockStatus = (TextView) findViewById(R.id.lockStatus);
         final TextView middleText = (TextView) findViewById(R.id.middleText);
@@ -66,7 +93,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        //this is what makes the prompt for accessibility at the beginning, right now itll appear
+        //everytime it starts, but can change that once we find a better spot
         if (!accessibilityEnabled) {
 
             Intent dialogIntent = new Intent(this, AccessibilityRequestActivity.class);
@@ -99,14 +127,24 @@ public class MainActivity extends AppCompatActivity {
 
                     sliderPercent = i;
                     StepCounting = stepGoal - ((int) (stepGoal * (i * 0.01)));
+
+                    editor.putInt("StepCounting",StepCounting);
+                    editor.apply();
+
                     lowerText.setText("" + i + "%");
                     middleText.setText("" + StepCounting);
 
                     if (i == 100) {
-                        lockStatus.setText("UNLOCKED");
+
+                        lockOn = false;
+                        LockString = "UNLOCKED";
+                        lockStatus.setText("" + LockString);
                     }
                     if (i != 100) {
-                        lockStatus.setText("LOCKED");
+
+                        //lockOn = true;
+                        //LockString = "LOCKED";
+                        //lockStatus.setText(""+ LockString);
                     }
                 } else {
                     circleProgressBar.setProgressWithAnimation(i);
@@ -115,10 +153,15 @@ public class MainActivity extends AppCompatActivity {
                     lowerText.setText("" + i + "%");
                     middleText.setText("" + StepCounting);
                     if (i == 100) {
+
+                        lockOn = false;
+                        LockString = "UNLOCKED";
                         lockStatus.setText("UNLOCKED");
                     }
                     if (i != 100) {
-                        lockStatus.setText("LOCKED");
+                        lockOn = true;
+                        LockString = "LOCKED";
+                        lockStatus.setText(""+ LockString);
                     }
                 }
             }
@@ -175,15 +218,20 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.makeText(MainActivity.this, "lock disabled for " + mEmail.getText().toString() + " minutes", Toast.LENGTH_LONG).show();
 
                                     lockDisableTime = Integer.parseInt( mEmail.getText().toString() );
+
+                                    //starting the notification "alarm", this is the only function that uses this currently but it could be
+                                    //used on other ones later
                                     startAlarm(true, false);
-                                    lockStatus.setText("UNLOCKED");
+
+                                    lockOn = false;
+                                    LockString = "UNLOCKED";
+                                    lockStatus.setText(""+LockString);
                                     dialog.dismiss();
 
                                 }
                             });
 
 
-                            //this will call another dialog box that lets people put in time
 
                         } else {
                             Toast.makeText(MainActivity.this, "bad pin", Toast.LENGTH_SHORT).show();
@@ -227,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
                             dialog.show();
 
 
-                            //this is the action listener for the inner-menu on the unlock. it SHOULD NOT bring up list of apps. ONLY the "lock" trigger should do that.
+                            //this is the action listener for the inner-menu on the lock. .
 
                             mLogin.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -235,6 +283,8 @@ public class MainActivity extends AppCompatActivity {
 
                                     seekBarProgress.setProgress(0);
                                     stepGoal = Integer.parseInt(mEmail.getText().toString());
+                                    editor.putInt("stepGoal",stepGoal);
+                                    editor.apply();
                                     lowerText.setText("" + 0 + "%");
                                     middleText.setText("" + stepGoal);
                                     Toast.makeText(MainActivity.this, "step goal updated.", Toast.LENGTH_LONG).show();
@@ -297,7 +347,9 @@ public class MainActivity extends AppCompatActivity {
                                 public void onClick(View view) {
 
                                     Toast.makeText(MainActivity.this, "lock disabled. Use lock to reactivate.", Toast.LENGTH_LONG).show();
-                                    lockStatus.setText("UNLOCKED");
+                                    lockOn = false;
+                                    LockString = "UNLOCKED";
+                                    lockStatus.setText(""+LockString);
                                     dialog.dismiss();
 
                                 }
@@ -366,13 +418,17 @@ public class MainActivity extends AppCompatActivity {
 
     public static void LockApps(){
 
-        lockStatus.setText( "LOCKED" );
+        lockOn = true;
+        LockString = "LOCKED";
+        lockStatus.setText(""+LockString);
 
     }
 
     public static void updateUI(){
 
-        lockStatus.setText( "LOCKED" );
+        lockOn = true;
+        LockString = "LOCKED";
+        lockStatus.setText(""+LockString);
 
     }
 

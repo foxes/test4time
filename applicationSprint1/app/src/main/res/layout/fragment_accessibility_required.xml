@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView6"
             android:padding="20dp"
-            android:layout_weight="0.54"
+            android:layout_weight="0.25"
             android:textSize="24sp"
             android:textAlignment="center"
             android:gravity="center"
