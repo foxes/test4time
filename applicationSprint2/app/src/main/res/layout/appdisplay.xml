@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="just pretend this page has a cool display of all the installed apps on your phone. coming soon™"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:id="@+id/textView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:gravity="center"
+        android:text="for now, heres a cool picture of my cat chloe"
+        android:ems="10"
+        android:id="@+id/editText" />
+
+    <ImageView
+        android:gravity="center"
+        android:layout_width="214dp"
+        android:layout_height="235dp"
+        app:srcCompat="@drawable/chloe"
+        android:id="@+id/imageView" />
+
+    <Button
+        android:text="that's a rad cat!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLogin" />
+
+    <Button
+        android:text="i've seen better..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button" />
+
+</LinearLayout>
