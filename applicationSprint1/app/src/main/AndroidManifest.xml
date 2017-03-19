@@ -8,6 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <service android:name=".LockingService"
+            android:exported="false"/>/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,6 +20,15 @@
         </activity>
 
         <activity
+            android:name=".WhiteListView"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="AccessibilityRequestActivity"
             android:label="Accessibility Request" />
 
@@ -24,5 +36,9 @@
         <receiver android:name=".AlarmNotificationReceiver"/>
         <receiver android:name=".AlarmToastReceiver"/>
     </application>
+
+    <uses-permission xmlns:tools="http://schemas.android.com/tools"
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
 
 </manifest>

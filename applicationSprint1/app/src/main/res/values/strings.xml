@@ -9,4 +9,6 @@
     <string name="enter_pin">ENTER PIN</string>
     <string name="enter">enter</string>
     <string name="login">login</string>
+    <string name="some_text"></string>
+    <string name="whitelist_filename">whiteList.txt</string>
 </resources>
