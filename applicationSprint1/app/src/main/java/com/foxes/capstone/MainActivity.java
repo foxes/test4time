@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Calendar;
 import java.util.Random;
 
 import android.app.AlarmManager;
@@ -27,24 +29,28 @@ import android.widget.RadioButton;
 public class MainActivity extends AppCompatActivity {
 
     int stepCounter = 100;
-    int stepGoal = 2500;
+    static int stepGoal = 2500;
+    static int lockDisableTime;
     int StepCounting;
     int sliderPercent;
 
-    boolean lockStatus;
+    //boolean lockStatus;
 
     Button buttonTimer;
     Button buttonLock;
     Button buttonUnLock;
     Button buttonRefresh;
 
+    public static TextView lockStatus;
+    public TextView middleText;
+    public TextView upperText;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView lockStatus = (TextView) findViewById(R.id.lockStatus);
+        lockStatus = (TextView) findViewById(R.id.lockStatus);
         final TextView middleText = (TextView) findViewById(R.id.middleText);
         final TextView upperText = (TextView) findViewById(R.id.upperText);
         final TextView lowerText = (TextView) findViewById(R.id.lowerText);
@@ -60,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
         seekBarProgress = (SeekBar) findViewById(R.id.seekBar_progress);
 
         final CircleProgressBar circleProgressBar = (CircleProgressBar) findViewById(R.id.custom_progressBar);
+
+
+
 
         seekBarProgress.setProgress((int) circleProgressBar.getProgress());
         seekBarProgress.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -146,7 +155,8 @@ public class MainActivity extends AppCompatActivity {
 
                                     Toast.makeText(MainActivity.this, "lock disabled for " + mEmail.getText().toString() + " minutes", Toast.LENGTH_LONG).show();
 
-                                    startAlarm(true, true);
+                                    lockDisableTime = Integer.parseInt( mEmail.getText().toString() );
+                                    startAlarm(true, false);
                                     lockStatus.setText("UNLOCKED");
                                     dialog.dismiss();
 
@@ -209,7 +219,9 @@ public class MainActivity extends AppCompatActivity {
                                     lowerText.setText("" + 0 + "%");
                                     middleText.setText("" + stepGoal);
                                     Toast.makeText(MainActivity.this, "step goal updated.", Toast.LENGTH_LONG).show();
-                                    lockStatus.setText("LOCKED");
+
+                                    LockApps();
+                                    //lockStatus.setText("LOCKED");
                                     dialog.dismiss();
 
 
@@ -301,30 +313,50 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-        /////////////////////////////////////////////////////////////////////////////////////////
-        private void startAlarm(boolean isNotification, boolean isRepeat) {
-            AlarmManager manager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-            Intent myIntent;
-            PendingIntent pendingIntent;
+    /////////////////////////////////////////////////////////////////////////////////////////
+    public void startAlarm(boolean isOn, boolean isKill) {
+        AlarmManager manager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        Intent myIntent;
+        PendingIntent pendingIntent;
 
-            if(!isNotification)
-            {
-                myIntent = new Intent(MainActivity.this,AlarmToastReceiver.class);
-                pendingIntent = PendingIntent.getBroadcast(this,0,myIntent,0);
-            }
-            else{
-                myIntent = new Intent(MainActivity.this,AlarmNotificationReceiver.class);
-                pendingIntent = PendingIntent.getBroadcast(this,0,myIntent,0);
-            }
 
-            //if(!isRepeat)
-            manager.set(AlarmManager.RTC_WAKEUP, SystemClock.elapsedRealtime()+100,pendingIntent);
-            // else
-            // manager.setRepeating(AlarmManager.RTC_WAKEUP,SystemClock.elapsedRealtime()+100,100,pendingIntent);
-        }
+        myIntent = new Intent(getApplicationContext(),AlarmNotificationReceiver.class);
+        pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),1,myIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+
+        //60,000 milliseconds is the fastest this can go, if you set it less than 60k (1 minute)
+        //itll literally set itself to 60,000.
+        manager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),60000,pendingIntent);
+
+
+        //if(!isRepeat)
+
+
+
+    }
 
 
     /////////////////////////////////////////////////////////////////////////////////////////
+
+    public static void StopAlarm(Context c){
+
+    }
+
+    public static void LockApps(){
+
+        lockStatus.setText( "LOCKED" );
+
+    }
+
+    public static void updateUI(){
+
+        lockStatus.setText( "LOCKED" );
+
+    }
+
+
 
 }
 
