@@ -59,62 +59,6 @@
             android:layout_width="85dp"
             android:layout_height="85dp" />
 
-        <SeekBar
-            android:id="@+id/seekBar_progress"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:indeterminate="false"
-            android:max="100"
-            android:layout_above="@+id/refreshButton"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-
-            android:gravity="center"
-            android:text="100%"
-            android:id="@+id/lowerText"
-            android:textColorLink="#ffffff"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-            android:layout_width="400dp"
-            android:textColor="#ffffff"
-            android:layout_marginBottom="35dp"
-            android:layout_height="50dp"
-            android:layout_alignBottom="@+id/custom_progressBar"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-
-            android:gravity="center"
-            android:text="steps remaining"
-            android:id="@+id/upperText"
-            android:textColorLink="#ffffff"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
-            android:layout_height="25dp"
-            android:layout_marginTop="68dp"
-            android:layout_width="400dp"
-            android:layout_alignTop="@+id/custom_progressBar"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-
-            android:text="2500"
-            android:id="@+id/middleText"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-            android:gravity="center"
-            android:textColor="#ffffff"
-            android:layout_width="400dp"
-            android:layout_height="127dp"
-            android:layout_alignTop="@+id/upperText"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="8dp"
-            tools:ignore="HardcodedText" />
-
         <TextView
             android:text="UNLOCKED"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
@@ -133,11 +77,58 @@
             app:progress="0"
             android:gravity="center"
             app:progressBarThickness="14dp"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_marginBottom="39dp"
-            android:layout_above="@+id/seekBar_progress"
+            android:layout_height="320dp"
+            android:layout_width="320dp"
+            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
+
+        <TextView
+
+            android:gravity="center"
+            android:text="steps remaining"
+            android:id="@+id/upperText"
+            android:textColorLink="#ffffff"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
+            android:layout_width="400dp"
+            tools:ignore="HardcodedText"
+            android:textSize="24sp"
+            android:layout_height="45dp"
+            android:layout_marginTop="53dp"
+            android:layout_alignTop="@+id/custom_progressBar"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+
+            android:text="2500"
+            android:id="@+id/middleText"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_width="match_parent"
+            tools:ignore="HardcodedText"
+            android:textSize="138sp"
+            android:layout_height="155dp"
+            android:layout_above="@+id/lowerText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+
+            android:gravity="center"
+            android:text="100%"
+            android:id="@+id/lowerText"
+            android:textColorLink="#ffffff"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:layout_width="400dp"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="37dp"
+            tools:ignore="HardcodedText"
+            android:textSize="48sp"
+            android:layout_height="55dp"
+            android:layout_alignBottom="@+id/custom_progressBar"
+            android:layout_alignLeft="@+id/TimerButton"
+            android:layout_alignStart="@+id/TimerButton" />
 
 
     </RelativeLayout>

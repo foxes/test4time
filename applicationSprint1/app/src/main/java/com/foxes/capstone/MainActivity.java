@@ -116,7 +116,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         //to refresh the values after you close the app
-        middleText.setText("" + stepCounting);
+
+        if (stepCounting == 0){
+            middleText.setText("" + stepGoal);
+        }
+
+        if (stepCounting != 0){
+            middleText.setText("" + stepCounting);
+        }
         circleProgressBar.setProgressWithAnimation(sliderPercent);
         lowerText.setText("" + sliderPercent + "%");
         lockStatus.setText("" + LockString);
@@ -229,6 +236,35 @@ public class MainActivity extends AppCompatActivity {
                                 public void onClick(View view) {
 
                                     stepGoal = Integer.parseInt(mEmail.getText().toString());
+
+                                    lowerText.setText("" + 0 + "%");
+                                    middleText.setText("" + stepGoal);
+                                    circleProgressBar.setProgressWithAnimation(0);
+                                    stepCounter = 0;
+                                    stepCounting = 0;
+                                    sliderPercent = 0;
+
+
+
+                                    Toast.makeText(MainActivity.this, "step goal updated.", Toast.LENGTH_LONG).show();
+
+
+
+
+                                    AlarmManager manager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+                                    Intent myIntent;
+                                    PendingIntent pendingIntent;
+                                    myIntent = new Intent(getApplicationContext(),AlarmNotificationReceiver.class);
+                                    pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),1,myIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+
+
+                                    manager.cancel(pendingIntent);
+
+                                    lockOn = true;
+                                    LockString = "LOCKED";
+                                    lockStatus.setText(""+LockString);
+                                    dialog.dismiss();
+
                                     editor.putInt("stepGoal",stepGoal);
                                     editor.putInt("stepCounter",stepCounter);
                                     editor.putInt("sliderPercent",sliderPercent);
@@ -236,19 +272,7 @@ public class MainActivity extends AppCompatActivity {
                                     editor.putBoolean("lockOn",lockOn);
                                     editor.putString("LockString",LockString);
                                     editor.apply();
-
-                                    lowerText.setText("" + 0 + "%");
-                                    middleText.setText("" + stepGoal);
-                                    circleProgressBar.setProgressWithAnimation(0);
-                                    stepCounting = 0;
-                                    stepCounter = 0;
-
-
-                                    Toast.makeText(MainActivity.this, "step goal updated.", Toast.LENGTH_LONG).show();
-
-                                    LockApps();
-                                    //lockStatus.setText("LOCKED");
-                                    dialog.dismiss();
+                                    editor.apply();
 
 
                                 }
@@ -261,6 +285,9 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                     }
+
+
+
                 });
 
             }
@@ -308,6 +335,14 @@ public class MainActivity extends AppCompatActivity {
                                     LockString = "UNLOCKED";
                                     lockStatus.setText(""+LockString);
                                     dialog.dismiss();
+
+                                    editor.putInt("stepGoal",stepGoal);
+                                    editor.putInt("stepCounter",stepCounter);
+                                    editor.putInt("sliderPercent",sliderPercent);
+                                    editor.putInt("stepCounting",stepCounting);
+                                    editor.putBoolean("lockOn",lockOn);
+                                    editor.putString("LockString",LockString);
+                                    editor.apply();
 
                                 }
                             });
@@ -433,8 +468,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static void StopAlarm(Context c){
+    public void StopAlarm(Context c){
 
+        AlarmManager manager = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
+        Intent myIntent;
+        PendingIntent pendingIntent;
+        myIntent = new Intent(c.getApplicationContext(),AlarmNotificationReceiver.class);
+        pendingIntent = PendingIntent.getBroadcast(c.getApplicationContext(),1,myIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+
+
+        manager.cancel(pendingIntent);
     }
 
     public static void LockApps(){
