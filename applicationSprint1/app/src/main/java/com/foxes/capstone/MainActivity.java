@@ -80,6 +80,12 @@ public class MainActivity extends AppCompatActivity {
         final SharedPreferences.Editor editor = preferences.edit();
 
         stepGoal = preferences.getInt("stepGoal",stepGoal);
+        stepCounter = preferences.getInt("stepCounter",stepCounter);
+        sliderPercent = preferences.getInt("sliderPercent",sliderPercent);
+        stepCounting = preferences.getInt("stepCounting",stepCounting);
+        lockOn = preferences.getBoolean("lockOn",lockOn);
+        LockString = preferences.getString("LockString",LockString);
+
 
 
         final CircleProgressBar circleProgressBar = (CircleProgressBar) findViewById(R.id.custom_progressBar);
@@ -109,15 +115,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        middleText.setText("" + stepGoal);
-
-        final SeekBar seekBarProgress;
-        seekBarProgress = (SeekBar) findViewById(R.id.seekBar_progress);
-
-        //final CircleProgressBar circleProgressBar = (CircleProgressBar) findViewById(R.id.custom_progressBar);
-
-
-
+        //to refresh the values after you close the app
+        middleText.setText("" + stepCounting);
+        circleProgressBar.setProgressWithAnimation(sliderPercent);
+        lowerText.setText("" + sliderPercent + "%");
+        lockStatus.setText("" + LockString);
 
 
 
@@ -232,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
                                     editor.putInt("sliderPercent",sliderPercent);
                                     editor.putInt("stepCounting",stepCounting);
                                     editor.putBoolean("lockOn",lockOn);
-                                    editor.putString("LockString","LockString");
+                                    editor.putString("LockString",LockString);
                                     editor.apply();
 
                                     lowerText.setText("" + 0 + "%");
@@ -363,7 +365,13 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-
+                editor.putInt("stepGoal",stepGoal);
+                editor.putInt("stepCounter",stepCounter);
+                editor.putInt("sliderPercent",sliderPercent);
+                editor.putInt("stepCounting",stepCounting);
+                editor.putBoolean("lockOn",lockOn);
+                editor.putString("LockString",LockString);
+                editor.apply();
 
 
 
