@@ -23,5 +23,12 @@ public void launchAppLocker(View v){
     this.startService(intent);
 }
 
+    /*a button calls this via xml on click*/
+    public void launchWhiteList(View v){
+        //Log.d("MainActivity", "oncreate running, before launching service");
+        Intent intent = new Intent(this, WhiteListView.class);
+        this.startActivity(intent);
+    }
+
 
 }
