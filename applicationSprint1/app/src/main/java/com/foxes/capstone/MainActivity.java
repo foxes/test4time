@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     //this is the set stepGoal by the parents
-    static int stepGoal = 2500;
+    static int stepGoal = 1500;
 
-    //this is the current steps that the kid is on, should pull from fitbit API if possible
-    static int stepCounter = 100;
+    //this is the current steps that the kid is on, should pull from fitbit API when possible
+    static int stepCounter = 0;
 
 
     //this is the time that we'll disable the lock for, if we decide on a default time it could do stuff like unlocking for 60 minutes once step goal is reached
@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     //these are just for demoing prior to getting access to fitbit API, so delete them later
-    int StepCounting;
+    int stepCounting;
+
     int sliderPercent;
 
     public static final String OUT_OF_TIME = "outoftime";
@@ -79,13 +80,14 @@ public class MainActivity extends AppCompatActivity {
         final SharedPreferences.Editor editor = preferences.edit();
 
         stepGoal = preferences.getInt("stepGoal",stepGoal);
-        stepGoal = preferences.getInt("stepGoal",stepGoal);
 
 
+        final CircleProgressBar circleProgressBar = (CircleProgressBar) findViewById(R.id.custom_progressBar);
+        final TextView lowerText = (TextView) findViewById(R.id.lowerText);
         lockStatus = (TextView) findViewById(R.id.lockStatus);
         final TextView middleText = (TextView) findViewById(R.id.middleText);
         final TextView upperText = (TextView) findViewById(R.id.upperText);
-        final TextView lowerText = (TextView) findViewById(R.id.lowerText);
+        //final TextView lowerText = (TextView) findViewById(R.id.lowerText);
         buttonTimer = (Button) findViewById(R.id.TimerButton);
         buttonLock = (Button) findViewById(R.id.LockButton);
         buttonUnLock = (Button) findViewById(R.id.UnlockButton);
@@ -112,69 +114,12 @@ public class MainActivity extends AppCompatActivity {
         final SeekBar seekBarProgress;
         seekBarProgress = (SeekBar) findViewById(R.id.seekBar_progress);
 
-        final CircleProgressBar circleProgressBar = (CircleProgressBar) findViewById(R.id.custom_progressBar);
+        //final CircleProgressBar circleProgressBar = (CircleProgressBar) findViewById(R.id.custom_progressBar);
 
 
 
 
-        seekBarProgress.setProgress((int) circleProgressBar.getProgress());
-        seekBarProgress.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                if (b) {
-                    circleProgressBar.setProgressWithAnimation(i);
-                    // middleText.setText( "" + (int)  circleProgressBar.getProgress() );
 
-                    sliderPercent = i;
-                    StepCounting = stepGoal - ((int) (stepGoal * (i * 0.01)));
-
-                    editor.putInt("StepCounting",StepCounting);
-                    editor.apply();
-
-                    lowerText.setText("" + i + "%");
-                    middleText.setText("" + StepCounting);
-
-                    if (i == 100) {
-
-                        lockOn = false;
-                        LockString = "UNLOCKED";
-                        lockStatus.setText("" + LockString);
-                    }
-                    if (i != 100) {
-
-                        //lockOn = true;
-                        //LockString = "LOCKED";
-                        //lockStatus.setText(""+ LockString);
-                    }
-                } else {
-                    circleProgressBar.setProgressWithAnimation(i);
-                    sliderPercent = i;
-                    StepCounting = stepGoal - ((int) (stepGoal * (i * 0.01)));
-                    lowerText.setText("" + i + "%");
-                    middleText.setText("" + StepCounting);
-                    if (i == 100) {
-
-                        lockOn = false;
-                        LockString = "UNLOCKED";
-                        lockStatus.setText("UNLOCKED");
-                    }
-                    if (i != 100) {
-                        lockOn = true;
-                        LockString = "LOCKED";
-                        lockStatus.setText(""+ LockString);
-                    }
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
 
 
         //this is all code for the timer button button/////////////////////////////////////////////////
@@ -281,12 +226,22 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(View view) {
 
-                                    seekBarProgress.setProgress(0);
                                     stepGoal = Integer.parseInt(mEmail.getText().toString());
                                     editor.putInt("stepGoal",stepGoal);
+                                    editor.putInt("stepCounter",stepCounter);
+                                    editor.putInt("sliderPercent",sliderPercent);
+                                    editor.putInt("stepCounting",stepCounting);
+                                    editor.putBoolean("lockOn",lockOn);
+                                    editor.putString("LockString","LockString");
                                     editor.apply();
+
                                     lowerText.setText("" + 0 + "%");
                                     middleText.setText("" + stepGoal);
+                                    circleProgressBar.setProgressWithAnimation(0);
+                                    stepCounting = 0;
+                                    stepCounter = 0;
+
+
                                     Toast.makeText(MainActivity.this, "step goal updated.", Toast.LENGTH_LONG).show();
 
                                     LockApps();
@@ -377,8 +332,41 @@ public class MainActivity extends AppCompatActivity {
                 Random rand = new Random();
                 int n = rand.nextInt(5);
 
+                stepCounter = stepCounter + n;
+                stepCounting = stepGoal - stepCounter;
 
-                 seekBarProgress.setProgress(sliderPercent + n);
+                if (stepCounter < stepGoal) {
+
+                    stepCounting = stepGoal - stepCounter;
+                    middleText.setText("" + stepCounting);
+                    sliderPercent = ( (int)(stepCounter / (stepGoal*.01) ) );
+                    circleProgressBar.setProgressWithAnimation(sliderPercent);
+                    lowerText.setText("" + sliderPercent + "%");
+
+                    lockOn = true;
+                    LockString = "LOCKED";
+                    lockStatus.setText("" + LockString);
+
+
+                }
+
+                if (stepCounter > stepGoal){
+                    middleText.setText("" + 0);
+                    circleProgressBar.setProgressWithAnimation(100);
+                    lowerText.setText("" + 100 + "%");
+
+                    lockOn = false;
+                    LockString = "UNLOCKED";
+                    lockStatus.setText("" + LockString);
+
+
+                }
+
+
+
+
+
+
 
 
             }
@@ -411,6 +399,31 @@ public class MainActivity extends AppCompatActivity {
 
 
     /////////////////////////////////////////////////////////////////////////////////////////
+
+
+    //this doesnt work because its outside of a click thing :(((
+    public void updateStepsAndCircle() {
+
+        stepCounting = stepGoal - stepCounter;
+        middleText.setText("" + stepCounting);
+        sliderPercent = (int) ((stepGoal * 100.0f) / stepCounter);
+
+      //  circleProgressBar.setProgressWithAnimation(sliderPercent);
+      //  lowerText.setText("" + sliderPercent + "%");
+
+        if (sliderPercent == 100) {
+
+            lockOn = false;
+            LockString = "UNLOCKED";
+            lockStatus.setText("UNLOCKED");
+        }
+        if (sliderPercent != 100) {
+            lockOn = true;
+            LockString = "LOCKED";
+            lockStatus.setText("" + LockString);
+        }
+
+    }
 
     public static void StopAlarm(Context c){
 
