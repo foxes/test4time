@@ -22,6 +22,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 import java.util.SortedMap;
@@ -45,6 +46,8 @@ public class LockingService extends IntentService {
     private File appPath;
     private static final String WHITE_LIST = "whiteList.txt";
     private ServiceStatuses serviceStatuses;
+    public static long lastTimeStamp = 0;
+    public static boolean getFirstTimeStamp = true;
 
     public LockingService() {
         super("LockingService");
@@ -94,21 +97,46 @@ public class LockingService extends IntentService {
          * in order to lower battery usage etc.
          */
         while (true) {
+            Log.d("LockingService", "currentTimestamp: " + Calendar.getInstance().getTimeInMillis());
             if(serviceStatuses.needToStopLockingService.get()){
                 /*close the service*/
+                serviceStatuses.needToStopLockingService.set(false);
+                serviceStatuses.isRunningLockingService.set(false);
+                this.stopSelf();
+                break;
             }else if(serviceStatuses.needToUpdateWhiteList.get()){
                 /*update whitelist*/
+                serviceStatuses.needToUpdateWhiteList.set(false);
                 populateWhiteList();
             }
 
-            if (!whiteList.contains(getForegroundApp())) {
+            if(serviceStatuses.isTemporarilyUnlocked.get()){
+                /*
+                if(getFirstTimeStamp){
+                    lastTimeStamp = Calendar.getInstance().getTimeInMillis();
+                    getFirstTimeStamp = false;
+                }
+                */
+                Log.d("lock", "timeRemaining: " + serviceStatuses.endOfUnlockTimestamp);
+                //Log.d("lock", "timeRemaining: " + serviceStatuses.remainingUnlockedTime);
+                /*
+                serviceStatuses.remainingUnlockedTime.set(
+                        serviceStatuses.remainingUnlockedTime.get() -
+                                Calendar.getInstance().getTimeInMillis() - lastTimeStamp);
+                                */
+                if(serviceStatuses.endOfUnlockTimestamp.get() <= Calendar.getInstance().getTimeInMillis()){
+                    serviceStatuses.isTemporarilyUnlocked.set(false);
+                    //maybe set other conditions
+                }
+            }
+            else if (!whiteList.contains(getForegroundApp()) ) {
                 Intent mainIntent;
                 mainIntent = new Intent(getApplicationContext(), MainActivity.class);
-                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
+                mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Log.d("LockingService", "App is NOT on the whitelist");
                 startActivity(mainIntent);
             }else{
-                Log.d("LockingService", "App doesn't match whitelist");
+                Log.d("LockingService", "App is on the whitelist");
             }
             try {
                 Thread.sleep(2000);
@@ -137,7 +165,7 @@ public class LockingService extends IntentService {
      *   system apps are added to the whitelist. Loads whiteList from a file also
      */
 
-/*will never save system apps to hard storage rightnow. may keep adding values whitelist*/
+/*will never save system apps to hard storage rightnow. may keep adding values to the whitelist*/
     private void populateWhiteList() {
 
         File f = new File(appPath+"/"+WHITE_LIST);
@@ -179,7 +207,7 @@ public class LockingService extends IntentService {
                 whiteList.add(p.packageName);
             }
         }
-        Log.d("LockingService", "BlockedApps: " + whiteList.toString());
+        //Log.d("LockingService", "BlockedApps: " + whiteList.toString());
         serviceStatuses.needToUpdateWhiteList.set(false);
     }
 
