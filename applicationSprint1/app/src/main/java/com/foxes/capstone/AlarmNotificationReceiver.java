@@ -11,7 +11,6 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.NotificationCompat;
 
 public class AlarmNotificationReceiver extends BroadcastReceiver {
@@ -38,6 +37,9 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
             NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.notify(1, builder.build());
 
+            //this line caused an error:
+            // Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.TextView.setText(java.lang.CharSequence)'
+            //likely from something being purged from memory by the OS
             MainActivity.updateUI();
 
             StopAlarm(context);

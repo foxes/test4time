@@ -1,8 +1,14 @@
 package com.foxes.capstone;
 
 
-
+import android.app.AlarmManager;
+import android.app.AppOpsManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
@@ -10,23 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Random;
-import java.util.concurrent.locks.Lock;
-
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.os.SystemClock;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.RadioButton;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -68,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     public static TextView lockStatus;
     public TextView middleText;
     public TextView upperText;
+    public ServiceStatuses serviceStatuses;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         stepCounting = preferences.getInt("stepCounting",stepCounting);
         lockOn = preferences.getBoolean("lockOn",lockOn);
         LockString = preferences.getString("LockString",LockString);
-
+        serviceStatuses = new ServiceStatuses();
 
 
         final CircleProgressBar circleProgressBar = (CircleProgressBar) findViewById(R.id.custom_progressBar);
@@ -103,6 +98,17 @@ public class MainActivity extends AppCompatActivity {
 
         //this is what makes the prompt for accessibility at the beginning, right now itll appear
         //everytime it starts, but can change that once we find a better spot
+
+        if (needPermissionForBlocking(this)) {
+            Intent dialogIntent = new Intent(this, AccessibilityRequestActivity.class);
+            dialogIntent.putExtra(MainActivity.OUT_OF_TIME, true);
+            dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(dialogIntent);
+
+            accessibilityEnabled = true;
+
+        }
+        /*
         if (!accessibilityEnabled) {
 
             Intent dialogIntent = new Intent(this, AccessibilityRequestActivity.class);
@@ -113,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
             accessibilityEnabled = true;
 
         }
+        */
 
 
         //to refresh the values after you close the app
@@ -172,6 +179,8 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.makeText(MainActivity.this, "lock disabled for " + mEmail.getText().toString() + " minutes", Toast.LENGTH_LONG).show();
 
                                     lockDisableTime = Integer.parseInt( mEmail.getText().toString() );
+                                    serviceStatuses.endOfUnlockTimestamp.set(Calendar.getInstance().getTimeInMillis() + lockDisableTime*60000);
+                                    serviceStatuses.isTemporarilyUnlocked.set(true);
 
                                     //starting the notification "alarm", this is the only function that uses this currently but it could be
                                     //used on other ones later
@@ -260,10 +269,14 @@ public class MainActivity extends AppCompatActivity {
 
                                     manager.cancel(pendingIntent);
 
+
+
+                                    serviceStatuses.isRunningLockingService.set(true);
                                     lockOn = true;
                                     LockString = "LOCKED";
                                     lockStatus.setText(""+LockString);
                                     dialog.dismiss();
+                                    startService(new Intent(getApplicationContext(),LockingService.class));
 
                                     editor.putInt("stepGoal",stepGoal);
                                     editor.putInt("stepCounter",stepCounter);
@@ -329,8 +342,9 @@ public class MainActivity extends AppCompatActivity {
                             mLogin.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-
+                                    //TODO
                                     Toast.makeText(MainActivity.this, "lock disabled. Use lock to reactivate.", Toast.LENGTH_LONG).show();
+                                    serviceStatuses.needToStopLockingService.set(true);
                                     lockOn = false;
                                     LockString = "UNLOCKED";
                                     lockStatus.setText(""+LockString);
@@ -415,6 +429,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////
+    // USED IN API 21
+    // Check if service has access to usage Data
+    //
+    private static boolean needPermissionForBlocking(Context context) {
+        try {
+            PackageManager packageManager = context.getPackageManager();
+            ApplicationInfo applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 0);
+            AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
+            int mode = appOpsManager.checkOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS, applicationInfo.uid, applicationInfo.packageName);
+            return (mode != AppOpsManager.MODE_ALLOWED);
+        } catch (PackageManager.NameNotFoundException e) {
+            return true;
+        }
     }
     /////////////////////////////////////////////////////////////////////////////////////////
     public void startAlarm(boolean isOn, boolean isKill) {
