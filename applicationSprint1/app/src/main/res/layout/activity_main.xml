@@ -20,135 +20,151 @@
 
         <Button
             android:id="@+id/LockButton"
-            android:background="@drawable/lockbutton"
-            android:elevation="0dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
             android:layout_width="45dp"
             android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/lockbutton"
+            android:elevation="0dp"
             tools:ignore="UnusedAttribute" />
 
         <Button
             android:id="@+id/UnlockButton"
-            android:background="@drawable/unlockbutton"
-            android:layout_marginRight="25dp"
-            android:layout_marginEnd="25dp"
-            android:layout_alignBottom="@+id/LockButton"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
+            android:layout_width="45dp"
             android:layout_height="70dp"
-            android:layout_width="45dp" />
+            android:layout_alignBottom="@+id/LockButton"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/unlockbutton" />
 
         <Button
+            android:id="@+id/TimerButton"
+            android:layout_width="45dp"
             android:layout_height="65dp"
             android:layout_alignBottom="@+id/LockButton"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
-            android:id="@+id/TimerButton"
-            android:background="@drawable/alarmclockbutton"
-            android:layout_width="45dp" />
+            android:background="@drawable/alarmclockbutton" />
 
         <Button
+            android:id="@+id/refreshButton"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:id="@+id/refreshButton"
-            android:background="@drawable/refresh"
-            android:layout_width="85dp"
-            android:layout_height="85dp" />
+            android:background="@drawable/refresh" />
 
         <TextView
+            android:id="@+id/lockStatus"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
             android:text="UNLOCKED"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:gravity="right"
-            android:id="@+id/lockStatus"
-            android:layout_height="50dp"
-            android:layout_width="250dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
             android:textColor="#ffffff"
-            android:layout_alignParentEnd="true"
             tools:ignore="HardcodedText,RtlHardcoded" />
 
         <com.foxes.capstone.CircleProgressBar
             android:id="@+id/custom_progressBar"
-            app:progress="0"
-            android:gravity="center"
-            app:progressBarThickness="14dp"
-            android:layout_height="320dp"
             android:layout_width="320dp"
+            android:layout_height="320dp"
+            android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:gravity="center"
+            app:progress="0"
+            app:progressBarThickness="14dp" />
 
         <TextView
 
+            android:id="@+id/upperText"
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/custom_progressBar"
+            android:layout_marginTop="53dp"
             android:gravity="center"
             android:text="steps remaining"
-            android:id="@+id/upperText"
-            android:textColorLink="#ffffff"
             android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
-            android:layout_width="400dp"
-            tools:ignore="HardcodedText"
+            android:textColorLink="#ffffff"
             android:textSize="24sp"
-            android:layout_height="45dp"
-            android:layout_marginTop="53dp"
-            android:layout_alignTop="@+id/custom_progressBar"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            tools:ignore="HardcodedText" />
 
         <TextView
 
-            android:text="2500"
             android:id="@+id/middleText"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-            android:gravity="center"
-            android:textColor="#ffffff"
             android:layout_width="match_parent"
-            tools:ignore="HardcodedText"
-            android:textSize="138sp"
             android:layout_height="155dp"
             android:layout_above="@+id/lowerText"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:text="2500"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+            android:textColor="#ffffff"
+            android:textSize="138sp"
+            tools:ignore="HardcodedText" />
 
         <TextView
 
-            android:gravity="center"
-            android:text="100%"
             android:id="@+id/lowerText"
-            android:textColorLink="#ffffff"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
             android:layout_width="400dp"
-            android:textColor="#ffffff"
-            android:layout_marginBottom="37dp"
-            tools:ignore="HardcodedText"
-            android:textSize="48sp"
             android:layout_height="55dp"
             android:layout_alignBottom="@+id/custom_progressBar"
             android:layout_alignLeft="@+id/TimerButton"
-            android:layout_alignStart="@+id/TimerButton" />
+            android:layout_alignStart="@+id/TimerButton"
+            android:layout_marginBottom="37dp"
+            android:gravity="center"
+            android:text="100%"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="#ffffff"
+            android:textColorLink="#ffffff"
+            android:textSize="48sp"
+            tools:ignore="HardcodedText" />
 
         <Button
-            android:text="Whitelist Apps"
+            android:id="@+id/b02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/b02"
-            android:onClick="launchWhiteList"
             android:layout_alignBaseline="@+id/lockStatus"
             android:layout_alignBottom="@+id/lockStatus"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:onClick="launchWhiteList"
+            android:text="Whitelist Apps" />
 
         <Button
-            android:text="AppLocker"
+            android:id="@+id/b01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/b01"
-            android:onClick="launchAppLocker"
             android:layout_above="@+id/lockStatus"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:onClick="launchAppLocker"
+            android:text="AppLocker" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/custom_progressBar"
+            android:layout_alignEnd="@+id/custom_progressBar"
+            android:layout_alignLeft="@+id/TimerButton"
+            android:layout_alignRight="@+id/custom_progressBar"
+            android:layout_alignStart="@+id/TimerButton"
+            android:layout_below="@+id/LockButton"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
 
     </RelativeLayout>
 
