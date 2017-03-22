@@ -1,0 +1,11 @@
+this is just a file so i can commit with the tag "sprint2"
+
+most of our work was done in seperate branches, and although there is a folder called "sprint2application", our main application is still in the sprint1application folder.
+
+hopefully this isnt too confusing.
+
+sprint report here:
+https://docs.google.com/document/d/1qwGg0d23qw0oI7KCIKqnW_y1JSuP2B6C1pfpkqdwuys/edit?ts=58cd61ec
+
+sprint presentation here:
+https://mail.google.com/mail/u/0/#search/shared/15ae24685a2a2286

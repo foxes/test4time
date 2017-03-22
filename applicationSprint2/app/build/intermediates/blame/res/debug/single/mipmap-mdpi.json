@@ -1,6 +1,14 @@
 [
     {
-        "merged": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
-        "source": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }
 ]

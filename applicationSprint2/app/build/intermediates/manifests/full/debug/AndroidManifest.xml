@@ -5,8 +5,10 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="21"
         android:targetSdkVersion="25" />
+
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +16,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar" >
+        <service
+            android:name="com.foxes.capstone.LockingService"
+            android:exported="false" />
+/>
         <activity android:name="com.foxes.capstone.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +27,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.foxes.capstone.WhiteListView"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.foxes.capstone.AccessibilityRequestActivity"
+            android:label="Accessibility Request" />
 
         <receiver android:name="com.foxes.capstone.AlarmNotificationReceiver" />
         <receiver android:name="com.foxes.capstone.AlarmToastReceiver" />

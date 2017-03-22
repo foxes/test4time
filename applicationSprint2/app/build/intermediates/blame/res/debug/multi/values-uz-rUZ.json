@@ -1,17 +1,17 @@
 [
     {
-        "outputFile": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz-rUZ\\values-uz-rUZ.xml",
+        "outputFile": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz-rUZ\\values-uz-rUZ.xml",
         "map": [
             {
                 "to": {
                     "startLine": 2,
                     "startColumn": 4,
-                    "startOffset": 55,
+                    "startOffset": 105,
                     "endColumn": 104,
-                    "endOffset": 155
+                    "endOffset": 205
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -25,12 +25,12 @@
                 "to": {
                     "startLine": 3,
                     "startColumn": 4,
-                    "startOffset": 160,
+                    "startOffset": 210,
                     "endColumn": 107,
-                    "endOffset": 263
+                    "endOffset": 313
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -44,12 +44,12 @@
                 "to": {
                     "startLine": 4,
                     "startColumn": 4,
-                    "startOffset": 268,
+                    "startOffset": 318,
                     "endColumn": 122,
-                    "endOffset": 386
+                    "endOffset": 436
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -63,12 +63,12 @@
                 "to": {
                     "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 391,
+                    "startOffset": 441,
                     "endColumn": 103,
-                    "endOffset": 490
+                    "endOffset": 540
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -82,12 +82,12 @@
                 "to": {
                     "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 495,
+                    "startOffset": 545,
                     "endColumn": 113,
-                    "endOffset": 604
+                    "endOffset": 654
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -101,12 +101,12 @@
                 "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 609,
+                    "startOffset": 659,
                     "endColumn": 85,
-                    "endOffset": 690
+                    "endOffset": 740
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -120,12 +120,12 @@
                 "to": {
                     "startLine": 8,
                     "startColumn": 4,
-                    "startOffset": 695,
+                    "startOffset": 745,
                     "endColumn": 110,
-                    "endOffset": 801
+                    "endOffset": 851
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -139,12 +139,12 @@
                 "to": {
                     "startLine": 9,
                     "startColumn": 4,
-                    "startOffset": 806,
+                    "startOffset": 856,
                     "endColumn": 115,
-                    "endOffset": 917
+                    "endOffset": 967
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -158,12 +158,12 @@
                 "to": {
                     "startLine": 10,
                     "startColumn": 4,
-                    "startOffset": 922,
+                    "startOffset": 972,
                     "endColumn": 79,
-                    "endOffset": 997
+                    "endOffset": 1047
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -177,12 +177,12 @@
                 "to": {
                     "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 1002,
+                    "startOffset": 1052,
                     "endColumn": 78,
-                    "endOffset": 1076
+                    "endOffset": 1126
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -196,12 +196,12 @@
                 "to": {
                     "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 1081,
+                    "startOffset": 1131,
                     "endColumn": 83,
-                    "endOffset": 1160
+                    "endOffset": 1210
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -215,12 +215,12 @@
                 "to": {
                     "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 1165,
+                    "startOffset": 1215,
                     "endColumn": 108,
-                    "endOffset": 1269
+                    "endOffset": 1319
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -234,12 +234,12 @@
                 "to": {
                     "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 1274,
+                    "startOffset": 1324,
                     "endColumn": 106,
-                    "endOffset": 1376
+                    "endOffset": 1426
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -253,12 +253,12 @@
                 "to": {
                     "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 1381,
+                    "startOffset": 1431,
                     "endColumn": 100,
-                    "endOffset": 1477
+                    "endOffset": 1527
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -272,12 +272,12 @@
                 "to": {
                     "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 1482,
+                    "startOffset": 1532,
                     "endColumn": 107,
-                    "endOffset": 1585
+                    "endOffset": 1635
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -291,12 +291,12 @@
                 "to": {
                     "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 1590,
+                    "startOffset": 1640,
                     "endColumn": 104,
-                    "endOffset": 1690
+                    "endOffset": 1740
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -310,12 +310,12 @@
                 "to": {
                     "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 1695,
+                    "startOffset": 1745,
                     "endColumn": 106,
-                    "endOffset": 1797
+                    "endOffset": 1847
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -329,12 +329,12 @@
                 "to": {
                     "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 1802,
+                    "startOffset": 1852,
                     "endColumn": 123,
-                    "endOffset": 1921
+                    "endOffset": 1971
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -348,12 +348,12 @@
                 "to": {
                     "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 1926,
+                    "startOffset": 1976,
                     "endColumn": 98,
-                    "endOffset": 2020
+                    "endOffset": 2070
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -367,12 +367,69 @@
                 "to": {
                     "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 2025,
-                    "endColumn": 83,
-                    "endOffset": 2104
+                    "startOffset": 2075,
+                    "endColumn": 97,
+                    "endOffset": 2168
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\bdf34c568558347c860166236a592ebc00211adf\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 105,
+                        "endColumn": 97,
+                        "endOffset": 198
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2173,
+                    "endColumn": 125,
+                    "endOffset": 2294
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\bdf34c568558347c860166236a592ebc00211adf\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 203,
+                        "endColumn": 125,
+                        "endOffset": 324
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 2299,
+                    "endColumn": 143,
+                    "endOffset": 2438
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\bdf34c568558347c860166236a592ebc00211adf\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 329,
+                        "endColumn": 143,
+                        "endOffset": 468
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 2443,
+                    "endColumn": 83,
+                    "endOffset": 2522
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -384,14 +441,936 @@
             },
             {
                 "to": {
-                    "startLine": 22,
+                    "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 2109,
+                    "startOffset": 2527,
                     "endColumn": 100,
-                    "endOffset": 2205
+                    "endOffset": 2623
                 },
                 "from": {
-                    "file": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2109,
+                        "endColumn": 100,
+                        "endOffset": 2205
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz-rUZ\\values-uz-rUZ.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 104,
+                    "endOffset": 205
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 104,
+                        "endOffset": 155
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 210,
+                    "endColumn": 107,
+                    "endOffset": 313
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 107,
+                        "endOffset": 263
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 318,
+                    "endColumn": 122,
+                    "endOffset": 436
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 268,
+                        "endColumn": 122,
+                        "endOffset": 386
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 441,
+                    "endColumn": 103,
+                    "endOffset": 540
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 391,
+                        "endColumn": 103,
+                        "endOffset": 490
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 545,
+                    "endColumn": 113,
+                    "endOffset": 654
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 495,
+                        "endColumn": 113,
+                        "endOffset": 604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 659,
+                    "endColumn": 85,
+                    "endOffset": 740
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 609,
+                        "endColumn": 85,
+                        "endOffset": 690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 745,
+                    "endColumn": 110,
+                    "endOffset": 851
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 695,
+                        "endColumn": 110,
+                        "endOffset": 801
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 856,
+                    "endColumn": 115,
+                    "endOffset": 967
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 806,
+                        "endColumn": 115,
+                        "endOffset": 917
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 972,
+                    "endColumn": 79,
+                    "endOffset": 1047
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 922,
+                        "endColumn": 79,
+                        "endOffset": 997
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1052,
+                    "endColumn": 78,
+                    "endOffset": 1126
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1002,
+                        "endColumn": 78,
+                        "endOffset": 1076
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1131,
+                    "endColumn": 83,
+                    "endOffset": 1210
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1081,
+                        "endColumn": 83,
+                        "endOffset": 1160
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1215,
+                    "endColumn": 108,
+                    "endOffset": 1319
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1165,
+                        "endColumn": 108,
+                        "endOffset": 1269
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1324,
+                    "endColumn": 106,
+                    "endOffset": 1426
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1274,
+                        "endColumn": 106,
+                        "endOffset": 1376
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1431,
+                    "endColumn": 100,
+                    "endOffset": 1527
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1381,
+                        "endColumn": 100,
+                        "endOffset": 1477
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1532,
+                    "endColumn": 107,
+                    "endOffset": 1635
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1482,
+                        "endColumn": 107,
+                        "endOffset": 1585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1640,
+                    "endColumn": 104,
+                    "endOffset": 1740
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1590,
+                        "endColumn": 104,
+                        "endOffset": 1690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1745,
+                    "endColumn": 106,
+                    "endOffset": 1847
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1695,
+                        "endColumn": 106,
+                        "endOffset": 1797
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1852,
+                    "endColumn": 123,
+                    "endOffset": 1971
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1802,
+                        "endColumn": 123,
+                        "endOffset": 1921
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1976,
+                    "endColumn": 98,
+                    "endOffset": 2070
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1926,
+                        "endColumn": 98,
+                        "endOffset": 2020
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2075,
+                    "endColumn": 97,
+                    "endOffset": 2168
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\bdf34c568558347c860166236a592ebc00211adf\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 105,
+                        "endColumn": 97,
+                        "endOffset": 198
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2173,
+                    "endColumn": 125,
+                    "endOffset": 2294
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\bdf34c568558347c860166236a592ebc00211adf\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 203,
+                        "endColumn": 125,
+                        "endOffset": 324
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 2299,
+                    "endColumn": 143,
+                    "endOffset": 2438
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\bdf34c568558347c860166236a592ebc00211adf\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 329,
+                        "endColumn": 143,
+                        "endOffset": 468
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 2443,
+                    "endColumn": 83,
+                    "endOffset": 2522
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2025,
+                        "endColumn": 83,
+                        "endOffset": 2104
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 2527,
+                    "endColumn": 100,
+                    "endOffset": 2623
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 2109,
+                        "endColumn": 100,
+                        "endOffset": 2205
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz-rUZ\\values-uz-rUZ.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 104,
+                    "endOffset": 205
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 104,
+                        "endOffset": 155
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 210,
+                    "endColumn": 107,
+                    "endOffset": 313
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 107,
+                        "endOffset": 263
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 318,
+                    "endColumn": 122,
+                    "endOffset": 436
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 268,
+                        "endColumn": 122,
+                        "endOffset": 386
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 441,
+                    "endColumn": 103,
+                    "endOffset": 540
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 391,
+                        "endColumn": 103,
+                        "endOffset": 490
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 545,
+                    "endColumn": 113,
+                    "endOffset": 654
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 495,
+                        "endColumn": 113,
+                        "endOffset": 604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 659,
+                    "endColumn": 85,
+                    "endOffset": 740
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 609,
+                        "endColumn": 85,
+                        "endOffset": 690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 745,
+                    "endColumn": 110,
+                    "endOffset": 851
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 695,
+                        "endColumn": 110,
+                        "endOffset": 801
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 856,
+                    "endColumn": 115,
+                    "endOffset": 967
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 806,
+                        "endColumn": 115,
+                        "endOffset": 917
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 972,
+                    "endColumn": 79,
+                    "endOffset": 1047
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 922,
+                        "endColumn": 79,
+                        "endOffset": 997
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1052,
+                    "endColumn": 78,
+                    "endOffset": 1126
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1002,
+                        "endColumn": 78,
+                        "endOffset": 1076
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1131,
+                    "endColumn": 83,
+                    "endOffset": 1210
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1081,
+                        "endColumn": 83,
+                        "endOffset": 1160
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1215,
+                    "endColumn": 108,
+                    "endOffset": 1319
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1165,
+                        "endColumn": 108,
+                        "endOffset": 1269
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1324,
+                    "endColumn": 106,
+                    "endOffset": 1426
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1274,
+                        "endColumn": 106,
+                        "endOffset": 1376
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1431,
+                    "endColumn": 100,
+                    "endOffset": 1527
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1381,
+                        "endColumn": 100,
+                        "endOffset": 1477
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1532,
+                    "endColumn": 107,
+                    "endOffset": 1635
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1482,
+                        "endColumn": 107,
+                        "endOffset": 1585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1640,
+                    "endColumn": 104,
+                    "endOffset": 1740
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1590,
+                        "endColumn": 104,
+                        "endOffset": 1690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1745,
+                    "endColumn": 106,
+                    "endOffset": 1847
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1695,
+                        "endColumn": 106,
+                        "endOffset": 1797
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1852,
+                    "endColumn": 123,
+                    "endOffset": 1971
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1802,
+                        "endColumn": 123,
+                        "endOffset": 1921
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1976,
+                    "endColumn": 98,
+                    "endOffset": 2070
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1926,
+                        "endColumn": 98,
+                        "endOffset": 2020
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2075,
+                    "endColumn": 97,
+                    "endOffset": 2168
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\bdf34c568558347c860166236a592ebc00211adf\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 105,
+                        "endColumn": 97,
+                        "endOffset": 198
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2173,
+                    "endColumn": 125,
+                    "endOffset": 2294
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\bdf34c568558347c860166236a592ebc00211adf\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 203,
+                        "endColumn": 125,
+                        "endOffset": 324
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 2299,
+                    "endColumn": 143,
+                    "endOffset": 2438
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\bdf34c568558347c860166236a592ebc00211adf\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 329,
+                        "endColumn": 143,
+                        "endOffset": 468
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 2443,
+                    "endColumn": 83,
+                    "endOffset": 2522
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2025,
+                        "endColumn": 83,
+                        "endOffset": 2104
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 2527,
+                    "endColumn": 100,
+                    "endOffset": 2623
+                },
+                "from": {
+                    "file": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,

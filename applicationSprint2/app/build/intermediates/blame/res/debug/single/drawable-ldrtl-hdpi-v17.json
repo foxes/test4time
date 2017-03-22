@@ -1,14 +1,38 @@
 [
     {
-        "merged": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png",
-        "source": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17\\abc_spinner_mtrl_am_alpha.9.png",
-        "source": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\drawable-ldrtl-hdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
+        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\drawable-ldrtl-hdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\drawable-ldrtl-hdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\drawable-ldrtl-hdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     }
 ]
