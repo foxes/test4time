@@ -1,74 +1,26 @@
 [
     {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
+        "merged": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
+        "merged": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout-v11\\notification_template_big_media_custom.xml"
     },
     {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_media_action.xml"
+        "merged": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout-v11\\notification_template_big_media.xml"
     },
     {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
+        "merged": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout-v11\\notification_media_action.xml"
     },
     {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_template_big_media.xml"
+        "merged": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout-v11\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_media_action.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_media_action.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_template_big_media.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_template_big_media.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
+        "merged": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout-v11\\notification_template_big_media_narrow.xml"
     }
 ]

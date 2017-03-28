@@ -121,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
         lockStatus = (TextView) findViewById(R.id.lockStatus);
         final TextView middleText = (TextView) findViewById(R.id.middleText);
         final TextView upperText = (TextView) findViewById(R.id.upperText);
-        //final TextView lowerText = (TextView) findViewById(R.id.lowerText);
         buttonTimer = (Button) findViewById(R.id.TimerButton);
         buttonLock = (Button) findViewById(R.id.LockButton);
         buttonUnLock = (Button) findViewById(R.id.UnlockButton);

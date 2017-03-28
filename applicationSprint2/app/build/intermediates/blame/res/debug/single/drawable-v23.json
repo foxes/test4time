@@ -1,14 +1,6 @@
 [
     {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\drawable-v23\\abc_control_background_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\applicationSprint1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\drawable-v23\\abc_control_background_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Fenrir\\Desktop\\AlanLock2\\test4time-master\\POSTsprint2app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
-        "source": "C:\\Users\\Fenrir\\.android\\build-cache\\c7c4f7126d9cd6eeb79e6c6c016c8ce1462282d4\\output\\res\\drawable-v23\\abc_control_background_material.xml"
+        "merged": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\drawable-v23\\abc_control_background_material.xml"
     }
 ]
