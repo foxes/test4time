@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Capstone</string>
+    <string name="this_will_disable_the_lock_until_reactivated">This will disable the lock until reactivated.</string>
+    <string name="confirm">Confirm</string>
+    <string name="_100">100%</string>
+    <string name="_2500">2500</string>
+    <string name="locked">locked</string>
+    <string name="steps_remaining">steps remaining</string>
+    <string name="enter_pin">ENTER PIN</string>
+    <string name="enter">enter</string>
+    <string name="login">login</string>
+    <string name="some_text"></string>
+    <string name="whitelist_filename">whiteList.txt</string>
+    <string name="color_swatch_description">Color %1$d</string>
+    <string name="color_swatch_description_selected">Color %1$d selected</string>
+    <string name="color_picker_default_title">Select a Color</string>
+    <string name="select_color">Select a color</string>
+</resources>
