@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.54"
+        android:gravity="center"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:text="This application requires special permissions, click the button below to give required permissions."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6"
+            android:padding="20dp"
+            android:layout_weight="0.25"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@android:color/background_light" />
+
+        <TextView
+            android:text="Access permissions -> Test 4 Time -> ON"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:padding="20dp"
+            android:layout_weight="0.54"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:text="Access Permissions"
+            android:layout_width="match_parent"
+            android:id="@+id/accessibility_permission_button"
+            android:elevation="2dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:layout_margin="20dp"
+            android:padding="20dp" />
+    </LinearLayout>
+
+</LinearLayout>
