@@ -59,13 +59,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    private FitbitCommunication comm = new FitbitCommunication();
 
 
     //this is the set stepGoal by the parents
     static int stepGoal = 1000;
 
     //this is the current steps that the kid is on, should pull from fitbit API when possible
-    static int stepCounter = 0;
+    static int stepCounter;
 
 
     //this is the time that we'll disable the lock for, if we decide on a default time it could do stuff like unlocking for 60 minutes once step goal is reached
@@ -107,15 +108,24 @@ public class MainActivity extends AppCompatActivity {
             StrictMode.setThreadPolicy(policy);
         }
 
+        //comm.run();
+        //stepCounter = comm.getSteps();
+        stepCounter = 0;
+
+        System.out.println("stepCounter: " + stepCounter);
 
         //pulling variables from sharedPreferences. basically memory
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         final SharedPreferences.Editor editor = preferences.edit();
 
-        stepGoal = preferences.getInt("stepGoal",stepGoal);
-        stepCounter = preferences.getInt("stepCounter",stepCounter);
+        //stepGoal = preferences.getInt("stepGoal",stepGoal);
+        System.out.println("stepGoal: " + stepGoal);
+        //stepCounter = preferences.getInt("stepCounter",stepCounter);
         sliderPercent = preferences.getInt("sliderPercent",sliderPercent);
-        stepCounting = preferences.getInt("stepCounting",stepCounting);
+        //stepCounting = preferences.getInt("stepCounting",stepCounting);
+        stepCounting = stepGoal - stepCounter;
+        System.out.println("stepCounting: " + stepCounting);
+
         lockOn = preferences.getBoolean("lockOn",lockOn);
         LockString = preferences.getString("LockString",LockString);
         serviceStatuses = new ServiceStatuses();
@@ -167,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (stepCounting != 0){
+
             middleText.setText("" + stepCounting);
         }
         circleProgressBar.setProgressWithAnimation(sliderPercent);
@@ -495,7 +506,7 @@ public class MainActivity extends AppCompatActivity {
                 editor.putString("LockString",LockString);
                 editor.apply();*/
 
-                FitbitCommunication comm = new FitbitCommunication();
+                //FitbitCommunication comm = new FitbitCommunication();
                 //comm.connectToFitbit();
                 comm.run();
 
