@@ -24,13 +24,20 @@ import static android.R.attr.key;
 public class FitbitCommunication implements Runnable{
 
     private int steps;
+    private int year;
+    private int month;
+    private int date;
 
-    private final String URL = " Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1RzRKNDIiLCJhdWQiOiIyMjg0TEwiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdzZXQgd2FjdCB3bG9jIiwiZXhwIjoxNDkxNDQxOTQzLCJpYXQiOjE0OTEyNjU0ODh9.6juwHu0VpsRZV4d-X4oTuHT7J7JDCO6UrqeMe-gk62k";
+    private final String URL = " Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1RzRKNDIiLCJhdWQiOiIyMjg0TEwiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdzZXQgd2FjdCB3bG9jIiwiZXhwIjoxNTIzMjE1MDcxLCJpYXQiOjE0OTE2NzkwNzF9.hpDuY3FL-jA3ze3U2QeZMFF5e8ywLJ19lPUPnhKaz-U";
     public void connectToFitbit() {
 
         try {
+            DateUtil dateUtil = new DateUtil();
             System.out.println("connectToFitbit started");
             URL link = new URL("https://api.fitbit.com/1/user/-/activities/date/2017-03-23.json");
+            //URL link = new URL("https://api.fitbit.com/1/user/-/activities/date/" + dateUtil.getYear() + "-" + dateUtil.getMonth() + "-" + dateUtil.getDay() + ".json");
+            System.out.println("Link: " + link);
+
             HttpURLConnection conn = (HttpURLConnection) link.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Authorization", URL);
@@ -85,6 +92,10 @@ public class FitbitCommunication implements Runnable{
             }*/
             JSONObject summary = jsonObject.getJSONObject("summary");
             String steps = summary.getString("steps");
+
+            int intSteps = Integer.parseInt(steps);
+            System.out.println("intSteps: " + intSteps);
+            setSteps(intSteps);
             System.out.println("steps: " + steps);
         }
         catch(JSONException j){
