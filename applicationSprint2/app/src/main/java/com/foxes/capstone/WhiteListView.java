@@ -3,7 +3,9 @@ package com.foxes.capstone;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -16,11 +18,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -39,6 +41,8 @@ import java.util.List;
 
 
 public class WhiteListView extends Activity {
+
+    final Context context = this;
     //private static ArrayList<ApplicationInfo> appsInfo;
     private static final String WHITE_LIST = "whiteList.txt"; //file name
     MyCustomAdapter dataAdapter = null;
@@ -46,6 +50,9 @@ public class WhiteListView extends Activity {
     private ArrayList<PackageObj> packageList;
     private File appPath;
     private ServiceStatuses serviceStatuses;
+    //private boolean alertResult;
+    PackageObj packageTemp;
+    CheckBox cb;
 
 
     private PackageManager mPackageManager = null;
@@ -55,6 +62,7 @@ public class WhiteListView extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.white_list_list_view);
+        //alertResult = false;
 
         whiteList = new ArrayList<String>();
         packageList = new ArrayList<PackageObj>();
@@ -145,6 +153,7 @@ public class WhiteListView extends Activity {
        // mApplications = checkForLaunchIntent(mPackageManager.getInstalledApplications(PackageManager.GET_META_DATA));
 
         File f = new File(appPath+"/"+WHITE_LIST);
+        boolean creatingFile = ! f.exists();
         if(f.exists() && !f.isDirectory()) {
             try {
                 Log.d("qwe", "before read whiteList:  " + whiteList.toString());
@@ -167,11 +176,15 @@ public class WhiteListView extends Activity {
         for (int i = 0; i < packs.size(); i++) {
             PackageInfo p = packs.get(i);
             ApplicationInfo a = p.applicationInfo;
+            boolean isSystemApp = false;
             // skip system apps if they shall not be included
 
+
             if ((a.flags & ApplicationInfo.FLAG_SYSTEM) == 1) {
-                continue;
+                isSystemApp = true;
+                //continue;
             }
+
 
             Log.d("LockingService", "PackageName: " + p.packageName);
             if (!MainActivity.class.getPackage().getName().equals(p.packageName)) {
@@ -179,15 +192,20 @@ public class WhiteListView extends Activity {
 
                 try {
                     boolean isNotBlocked = false;
-                    if (whiteList.contains(p.packageName)) {
+                    if (whiteList.contains(p.packageName) || (isSystemApp && creatingFile)) {
                         isNotBlocked = true;
                     }
+                    /*
+                    if ((a.flags & ApplicationInfo.FLAG_SYSTEM) == 1) {
+                         continue;
+                    }
+                    */
                     ApplicationInfo app = this.getPackageManager().getApplicationInfo(p.packageName, 0);
                     packageList.add(new PackageObj(app,
                             "" + packageManager.getApplicationLabel(app),
                             packageManager.getApplicationIcon(app),
                             p.packageName,
-                            isNotBlocked));
+                            isNotBlocked,isSystemApp));
 
 
                 } catch (PackageManager.NameNotFoundException e) {
@@ -195,6 +213,9 @@ public class WhiteListView extends Activity {
                 }
             }
         }
+        Collections.sort(packageList);
+
+
     }
 
     private void displayListView() {
@@ -211,18 +232,87 @@ public class WhiteListView extends Activity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 // When clicked, show a toast with the TextView text
-                PackageObj packageTemp = (PackageObj) parent.getItemAtPosition(position);
-                CheckBox cb = (CheckBox) view.findViewById(R.id.checkBox1);
-                cb.setChecked(!cb.isChecked());
-                packageTemp.setIsnotBlocked(!packageTemp.getIsNotBlocked());
-                Toast.makeText(getApplicationContext(),
-                        "Clicked on Row: " + packageTemp.getName() + "bool: " + packageTemp.getIsNotBlocked(),
-                        Toast.LENGTH_LONG).show();
+                packageTemp = (PackageObj) parent.getItemAtPosition(position);
+                cb = (CheckBox) view.findViewById(R.id.checkBox1);
+                String title, message, positive, negative;
+                if(packageTemp.getIsSystemApp()) {
+                    if (cb.isChecked()) {
+                        title = "Warning";
+                        message = "This is a system app, disabling it may disrupt normal use of the device.";
+                        positive = "Disable";
+                        negative = "Keep Enabled";
+                    } else {
+                        title = "Warning";
+                        message = "This is a system app, we recomend you enable it unless you are certain you want it blocked.";
+                        positive = "Enable";
+                        negative = "Keep Disabled";
+                    }
+
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                            context);
+                    // set title
+                    alertDialogBuilder.setTitle(title);
+                    // set dialog message
+
+                    alertDialogBuilder
+                            .setMessage(message)
+                            //.setCancelable(false)
+                            .setPositiveButton(positive, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    cb.setChecked(!cb.isChecked());
+                                    packageTemp.setIsnotBlocked(!packageTemp.getIsNotBlocked());
+                                }
+                            })
+                            .setNegativeButton(negative, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // if this button is clicked, just close
+                                    // the dialog box and do nothing
+
+                                    dialog.cancel();
+                                }
+                            });
+
+
+                    // create alert dialog
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+
+                    // show it
+                    alertDialog.show();
+
+                    Button positiveButton = (Button) alertDialog.findViewById(android.R.id.button1);
+                    Button negativeButton = (Button) alertDialog.findViewById(android.R.id.button2);
+                    // then get their parent ViewGroup
+                    ViewGroup buttonPanelContainer = (ViewGroup) positiveButton.getParent();
+                    int positiveButtonIndex = buttonPanelContainer.indexOfChild(positiveButton);
+                    int negativeButtonIndex = buttonPanelContainer.indexOfChild(negativeButton);
+                    if (positiveButtonIndex > negativeButtonIndex) {
+                        // prepare exchange their index in ViewGroup
+                        buttonPanelContainer.removeView(negativeButton);
+                        buttonPanelContainer.removeView(positiveButton);
+                        buttonPanelContainer.addView(positiveButton, negativeButtonIndex);
+                        buttonPanelContainer.addView(negativeButton, positiveButtonIndex);
+                    }
+
+                }
+                else{
+                    cb.setChecked(!cb.isChecked());
+                    packageTemp.setIsnotBlocked(!packageTemp.getIsNotBlocked());
+
+                }
+                //if(alertResult){
+                //cb.setChecked(!cb.isChecked());
+                //packageTemp.setIsnotBlocked(!packageTemp.getIsNotBlocked());
+
+                //Toast.makeText(getApplicationContext(),
+                //        "Clicked on Row: " + packageTemp.getName() + "bool: " + packageTemp.getIsNotBlocked(),
+                //        Toast.LENGTH_LONG).show();
             }
         });
-
-
     }
+
+
+
+
 
     private class MyCustomAdapter extends ArrayAdapter<PackageObj> {
 
