@@ -30,4 +30,13 @@ public class DateUtil {
         int day = cal.get(Calendar.DATE);
         return day;
     }
+
+    public String getTimeStamp(){
+
+        Long tmStamp = System.currentTimeMillis() / 1000;
+        String ts = tmStamp.toString();
+        System.out.println("tmStamp: " + ts);
+        return ts;
+    }
 }
+
