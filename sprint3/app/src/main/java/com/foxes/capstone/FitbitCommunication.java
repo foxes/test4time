@@ -34,8 +34,8 @@ public class FitbitCommunication implements Runnable{
         try {
             DateUtil dateUtil = new DateUtil();
             System.out.println("connectToFitbit started");
-            URL link = new URL("https://api.fitbit.com/1/user/-/activities/date/2017-03-23.json");
-            //URL link = new URL("https://api.fitbit.com/1/user/-/activities/date/" + dateUtil.getYear() + "-" + dateUtil.getMonth() + "-" + dateUtil.getDay() + ".json");
+            //URL link = new URL("https://api.fitbit.com/1/user/-/activities/date/2017-03-23.json");
+            URL link = new URL("https://api.fitbit.com/1/user/-/activities/date/" + dateUtil.getYear() + "-" + dateUtil.getMonth() + "-" + dateUtil.getDay() + ".json");
             System.out.println("Link: " + link);
 
             HttpURLConnection conn = (HttpURLConnection) link.openConnection();
@@ -78,18 +78,7 @@ public class FitbitCommunication implements Runnable{
         System.out.println("inside parser");
         try {
             JSONObject jsonObject = new JSONObject(response);
-            /*Iterator<?> keys = jsonObject.keys();
-            while(keys.hasNext()){
-                String key = (String) keys.next();
-                if(jsonObject.get(key) instanceof JSONObject) {
-                    JSONObject tmp = new JSONObject(jsonObject.get(key).toString());
-                    if (tmp.toString().equals("activity")) {
-                        System.out.println("in if");
-                        System.out.println("steps: " + tmp.getString("steps"));
-                        System.out.println("tmp: " + tmp);
-                    }
-                }
-            }*/
+
             JSONObject summary = jsonObject.getJSONObject("summary");
             String steps = summary.getString("steps");
 
@@ -121,3 +110,4 @@ public class FitbitCommunication implements Runnable{
 
 
 }
+
