@@ -60,7 +60,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     private FitbitCommunication comm = new FitbitCommunication();
+    public DateUtil dateUtil = new DateUtil();
 
+    public String timeStamp = "";
 
     //this is the set stepGoal by the parents
     static int stepGoal = 1000;
@@ -122,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("stepGoal: " + stepGoal);
         //stepCounter = preferences.getInt("stepCounter",stepCounter);
         sliderPercent = preferences.getInt("sliderPercent",sliderPercent);
+        //sliderPercent = ( (int)(stepCounter / (stepGoal*.01) ) );
         //stepCounting = preferences.getInt("stepCounting",stepCounting);
         stepCounting = stepGoal - stepCounter;
         System.out.println("stepCounting: " + stepCounting);
@@ -481,6 +484,38 @@ public class MainActivity extends AppCompatActivity {
                     lockStatus.setText("" + LockString);
 
 
+                }*/
+
+
+
+
+                /*editor.putInt("stepGoal",stepGoal);
+                editor.putInt("stepCounter",stepCounter);
+                editor.putInt("sliderPercent",sliderPercent);
+                editor.putInt("stepCounting",stepCounting);
+                editor.putBoolean("lockOn",lockOn);
+                editor.putString("LockString",LockString);
+                editor.apply();*/
+
+
+
+                comm.connectToFitbit();
+                int tmpStep = comm.getSteps();
+                timeStamp = dateUtil.getTimeStamp();
+                System.out.println("timeStamp: " + timeStamp);
+
+                stepCounter += tmpStep;
+                
+
+                if(stepCounter < stepGoal) {
+                    stepCounting = stepGoal - tmpStep;
+                    middleText.setText("" + stepCounting);
+                    sliderPercent = ( (int)(stepCounter / (stepGoal*.01) ) );
+                    circleProgressBar.setProgressWithAnimation(sliderPercent);
+                    lowerText.setText("" + sliderPercent + "%");
+                    lockOn = true;
+                    LockString = "LOCKED";
+                    lockStatus.setText("" + LockString);
                 }
 
                 if (stepCounter > stepGoal){
@@ -495,21 +530,7 @@ public class MainActivity extends AppCompatActivity {
                     lockStatus.setText("" + LockString);
 
 
-                }*/
-
-
-                /*editor.putInt("stepGoal",stepGoal);
-                editor.putInt("stepCounter",stepCounter);
-                editor.putInt("sliderPercent",sliderPercent);
-                editor.putInt("stepCounting",stepCounting);
-                editor.putBoolean("lockOn",lockOn);
-                editor.putString("LockString",LockString);
-                editor.apply();*/
-
-                //FitbitCommunication comm = new FitbitCommunication();
-                //comm.connectToFitbit();
-                comm.run();
-
+                }
 
             }
         });
@@ -629,5 +650,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+
+
 
 
