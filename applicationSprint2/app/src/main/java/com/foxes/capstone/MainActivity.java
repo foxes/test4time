@@ -32,12 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    //this is the set stepGoal by the parents
+    //this is the set stepGoal by the parents via the "lock" function
     static int stepGoal = 0;
 
     //this is the current steps that the kid is on, should pull from fitbit API when possible
     static int stepCounter = 0;
 
+    //this is the baseline steps, pull from the API when a lock is set
+    static int baselineSteps = 0;
 
     //this is the time that we'll disable the lock for, if we decide on a default time it could do stuff like unlocking for 60 minutes once step goal is reached
     //but right now it should just unlock indefinetly until the lock is reset by the parent
@@ -90,11 +92,14 @@ public class MainActivity extends AppCompatActivity {
         editor = preferences.edit();
 
         stepGoal = preferences.getInt("stepGoal",stepGoal);
+        baselineSteps = preferences.getInt("baselineSteps",baselineSteps);
         stepCounter = preferences.getInt("stepCounter",stepCounter);
         sliderPercent = preferences.getInt("sliderPercent",sliderPercent);
         stepCounting = preferences.getInt("stepCounting",stepCounting);
         lockOn = preferences.getBoolean("lockOn",false);
         LockString = preferences.getString("LockString","Unlocked");
+        mSelectedColor = preferences.getInt("mSelectedColor",mSelectedColor);
+
         serviceStatuses = new ServiceStatuses();
 
         isRunningLockingService = preferences.getBoolean("isRunningLockingService",false);
@@ -118,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.button);
 
 
-
         //this is what makes the prompt for accessibility at the beginning, right now itll appear
         //everytime it starts, but can change that once we find a better spot
 
@@ -131,19 +135,11 @@ public class MainActivity extends AppCompatActivity {
             accessibilityEnabled = true;
 
         }
-        /*
-        if (!accessibilityEnabled) {
 
-            Intent dialogIntent = new Intent(this, AccessibilityRequestActivity.class);
-            dialogIntent.putExtra(MainActivity.OUT_OF_TIME, true);
-            dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(dialogIntent);
 
-            accessibilityEnabled = true;
-
+        if(mSelectedColor != 0){
+            circleProgressBar.setColor(mSelectedColor);
         }
-        */
-
 
         //to refresh the values after you close the app
 
@@ -154,12 +150,14 @@ public class MainActivity extends AppCompatActivity {
         if (stepCounting != 0){
             middleText.setText("" + stepCounting);
         }
+
+
         circleProgressBar.setProgressWithAnimation(sliderPercent);
         lowerText.setText("" + sliderPercent + "%");
         lockStatus.setText("" + LockString);
 
 
-        mSelectedColor = ContextCompat.getColor(this, R.color.flamingo);
+        //mSelectedColor = ContextCompat.getColor(this, R.color.flamingo);
         final int[] mColors = getResources().getIntArray(R.array.default_rainbow);
 
 
@@ -179,9 +177,11 @@ public class MainActivity extends AppCompatActivity {
             public void onColorSelected(int color) {
                 mSelectedColor = color;
                 circleProgressBar.setColor(mSelectedColor);
-
+                saveEVERYTHING();
             }
         });
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -239,10 +239,7 @@ public class MainActivity extends AppCompatActivity {
 
                                     isTemporarilyUnlocked = true;
                                     endOfUnlockTimestamp = Calendar.getInstance().getTimeInMillis() + lockDisableTime * 60000;
-                                    //editor.putLong("endOfUnlockTimestamp", endOfUnlockTimestamp);
 
-                                    //serviceStatuses.endOfUnlockTimestamp.set(Calendar.getInstance().getTimeInMillis() + lockDisableTime * 60000);
-                                    //serviceStatuses.isTemporarilyUnlocked.set(true);
 
                                     //starting the notification "alarm", this is the only function that uses this currently but it could be
                                     //used on other ones later
@@ -251,9 +248,10 @@ public class MainActivity extends AppCompatActivity {
                                     lockOn = false;
                                     LockString = "UNLOCKED";
                                     lockStatus.setText("" + LockString);
-                                    editor.putBoolean("isTemporarilyUnlocked", isTemporarilyUnlocked);
-                                    editor.putLong("endOfUnlockTimestamp", endOfUnlockTimestamp);
-                                    editor.commit();
+
+                                    saveEVERYTHING();
+
+
                                     dialog.dismiss();
 
                                 }
@@ -314,6 +312,12 @@ public class MainActivity extends AppCompatActivity {
 
                                     stepGoal = Integer.parseInt(mEmail.getText().toString());
 
+                                    //pull from fitbit API when lock is set to set a baseline for later
+                                    //baselineSteps = *insert fitbpit pull @ current time here*
+
+                                    //delete this later keep above ^
+                                    baselineSteps = 0;
+
                                     lowerText.setText("" + 0 + "%");
                                     middleText.setText("" + stepGoal);
                                     circleProgressBar.setProgressWithAnimation(0);
@@ -335,12 +339,9 @@ public class MainActivity extends AppCompatActivity {
                                     manager.cancel(pendingIntent);
 
 
-                                    //serviceStatuses.isRunningLockingService.set(true);
+
                                     isRunningLockingService = true;
-                                    editor.putBoolean("isRunningLockingService", isRunningLockingService);
                                     isTemporarilyUnlocked = false;
-                                    editor.putBoolean("isTemporarilyUnlocked", isTemporarilyUnlocked);
-                                    editor.commit();
 
 
 
@@ -348,15 +349,13 @@ public class MainActivity extends AppCompatActivity {
                                     LockString = "LOCKED";
                                     lockStatus.setText("" + LockString);
                                     dialog.dismiss();
+
+
                                     startService(new Intent(getApplicationContext(), LockingService.class));
 
-                                    editor.putInt("stepGoal", stepGoal);
-                                    editor.putInt("stepCounter", stepCounter);
-                                    editor.putInt("sliderPercent", sliderPercent);
-                                    editor.putInt("stepCounting", stepCounting);
-                                    editor.putBoolean("lockOn", lockOn);
-                                    editor.putString("LockString", LockString);
-                                    editor.commit();
+                                    saveEVERYTHING();
+
+
                                    // editor.apply();
 
 
@@ -429,13 +428,9 @@ public class MainActivity extends AppCompatActivity {
                                         lockStatus.setText("" + LockString);
                                         dialog.dismiss();
 
-                                        editor.putInt("stepGoal", stepGoal);
-                                        editor.putInt("stepCounter", stepCounter);
-                                        editor.putInt("sliderPercent", sliderPercent);
-                                        editor.putInt("stepCounting", stepCounting);
-                                        editor.putBoolean("lockOn", lockOn);
-                                        editor.putString("LockString", LockString);
-                                        editor.commit();
+                                        saveEVERYTHING();
+
+
 
                                     }
                                 });
@@ -466,12 +461,19 @@ public class MainActivity extends AppCompatActivity {
                 Random rand = new Random();
                 int n = rand.nextInt(5);
 
+                //for later
+                //int tmpStep = comm.getSteps();
+                //stepCounter = tmpStep - baselineSteps;
+                //stepCounting = stepGoal - stepCounter
+               //baselineSteps = tmpStep;
+
+                //delete these, keep above ^
                 stepCounter = stepCounter + n;
                 stepCounting = stepGoal - stepCounter;
 
                 if (stepCounter < stepGoal) {
 
-                    stepCounting = stepGoal - stepCounter;
+                    //stepCounting = stepGoal - stepCounter;
                     middleText.setText("" + stepCounting);
                     sliderPercent = ( (int)(stepCounter / (stepGoal*.01) ) );
                     circleProgressBar.setProgressWithAnimation(sliderPercent);
@@ -480,11 +482,12 @@ public class MainActivity extends AppCompatActivity {
                     lockOn = true;
                     LockString = "LOCKED";
                     lockStatus.setText("" + LockString);
+                    saveEVERYTHING();
 
 
                 }
 
-                if (stepCounter > stepGoal){
+                if (stepCounter >= stepGoal){
                     middleText.setText("" + 0);
                     circleProgressBar.setProgressWithAnimation(100);
                     lowerText.setText("" + 100 + "%");
@@ -496,19 +499,16 @@ public class MainActivity extends AppCompatActivity {
                     lockOn = false;
                     LockString = "UNLOCKED";
                     lockStatus.setText("" + LockString);
+                    stepCounting = 0;
+
+                    sliderPercent = 100;
+                    saveEVERYTHING();
                     editor.commit();
 
 
                 }
 
-
-                editor.putInt("stepGoal",stepGoal);
-                editor.putInt("stepCounter",stepCounter);
-                editor.putInt("sliderPercent",sliderPercent);
-                editor.putInt("stepCounting",stepCounting);
-                editor.putBoolean("lockOn",lockOn);
-                editor.putString("LockString",LockString);
-                editor.commit();
+                saveEVERYTHING();
 
 
 
@@ -561,37 +561,6 @@ public class MainActivity extends AppCompatActivity {
     /////////////////////////////////////////////////////////////////////////////////////////
 
 
-    //this doesnt work because its outside of a click thing :(((
-    public void updateStepsAndCircle() {
-
-        stepCounting = stepGoal - stepCounter;
-        middleText.setText("" + stepCounting);
-        sliderPercent = (int) ((stepGoal * 100.0f) / stepCounter);
-
-      //  circleProgressBar.setProgressWithAnimation(sliderPercent);
-      //  lowerText.setText("" + sliderPercent + "%");
-
-        if (sliderPercent == 100) {
-            isRunningLockingService = false;
-            editor.putBoolean("isRunningLockingService", isRunningLockingService);
-            editor.commit();
-            //serviceStatuses.isRunningLockingService.set(false);
-            lockOn = false;
-            LockString = "UNLOCKED";
-            lockStatus.setText("UNLOCKED");
-        }
-        if (sliderPercent != 100) {
-            //serviceStatuses.isRunningLockingService.set(true);
-            isRunningLockingService = true;
-            editor.putBoolean("isRunningLockingService", isRunningLockingService);
-            editor.commit();
-            lockOn = true;
-            LockString = "LOCKED";
-            lockStatus.setText("" + LockString);
-        }
-
-    }
-
     public void StopAlarm(Context c){
 
         AlarmManager manager = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
@@ -602,22 +571,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         manager.cancel(pendingIntent);
-    }
-
-    public static void LockApps(){
-        //serviceStatuses.isRunningLockingService.set(true);
-        lockOn = true;
-        LockString = "LOCKED";
-        lockStatus.setText(""+LockString);
-
-    }
-
-    public static void updateUI(){
-        //serviceStatuses.isRunningLockingService.set(true);
-        lockOn = true;
-        LockString = "LOCKED";
-        lockStatus.setText(""+LockString);
-
     }
 
 
@@ -636,7 +589,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void saveEVERYTHING(){
 
+        editor.putInt("stepGoal", stepGoal);
+        editor.putInt("baselineSteps", baselineSteps);
+        editor.putInt("stepCounter", stepCounter);
+        editor.putInt("sliderPercent", sliderPercent);
+        editor.putInt("stepCounting", stepCounting);
+        editor.putBoolean("lockOn", lockOn);
+        editor.putString("LockString", LockString);
+        editor.putBoolean("isRunningLockingService", isRunningLockingService);
+        editor.putBoolean("isTemporarilyUnlocked", isTemporarilyUnlocked);
+        editor.putBoolean("needToStopLockingService", needToStopLockingService);
+        editor.putLong("endOfUnlockTimestamp", endOfUnlockTimestamp);
+        editor.putInt("mSelectedColor", mSelectedColor);
+        editor.commit();
+
+
+
+
+
+    }
 
 }
 

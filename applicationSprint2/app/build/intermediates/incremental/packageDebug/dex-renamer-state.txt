@@ -1,4 +1,4 @@
-#Sun Apr 09 03:55:48 EDT 2017
-base.0=C\:\\Users\\alanj_000\\Documents\\GIT\\test4timeTestingCopy2\\test4time\\applicationSprint2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Sun Apr 09 17:37:46 EDT 2017
+base.0=C\:\\Users\\Fenrir\\Desktop\\test4time-alan_locker_branch_2\\applicationSprint2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.0=C\:\\Users\\alanj_000\\Documents\\GIT\\test4timeTestingCopy2\\test4time\\applicationSprint2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.0=C\:\\Users\\Fenrir\\Desktop\\test4time-alan_locker_branch_2\\applicationSprint2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
