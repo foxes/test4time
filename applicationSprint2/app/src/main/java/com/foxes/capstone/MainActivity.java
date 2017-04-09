@@ -9,43 +9,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.app.Fragment;
-
-import android.graphics.Color;
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.SeekBar;
-
-
-import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 
 import org.xdty.preference.colorpicker.ColorPickerDialog;
 import org.xdty.preference.colorpicker.ColorPickerSwatch;
@@ -97,6 +69,16 @@ public class MainActivity extends AppCompatActivity {
     public ServiceStatuses serviceStatuses;
 
     private int mSelectedColor;
+
+    public static boolean isRunningLockingService;
+    public static boolean needToUpdateWhiteList ;
+    public static boolean needToStopLockingService ;
+    public static boolean isTemporarilyUnlocked ;
+    public static long endOfUnlockTimestamp;
+
+    SharedPreferences.Editor editor;
+    SharedPreferences preferences;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,16 +86,24 @@ public class MainActivity extends AppCompatActivity {
 
 
         //pulling variables from sharedPreferences. basically memory
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        final SharedPreferences.Editor editor = preferences.edit();
+         preferences = this.getSharedPreferences("myPrefs", MODE_MULTI_PROCESS); //.getDefaultSharedPreferences(this);
+        editor = preferences.edit();
 
         stepGoal = preferences.getInt("stepGoal",stepGoal);
         stepCounter = preferences.getInt("stepCounter",stepCounter);
         sliderPercent = preferences.getInt("sliderPercent",sliderPercent);
         stepCounting = preferences.getInt("stepCounting",stepCounting);
-        lockOn = preferences.getBoolean("lockOn",lockOn);
-        LockString = preferences.getString("LockString",LockString);
+        lockOn = preferences.getBoolean("lockOn",false);
+        LockString = preferences.getString("LockString","Unlocked");
         serviceStatuses = new ServiceStatuses();
+
+        isRunningLockingService = preferences.getBoolean("isRunningLockingService",false);
+        needToUpdateWhiteList  = preferences.getBoolean("needToUpdateWhiteList", true);
+        needToStopLockingService  = preferences.getBoolean ("needToStopLockingService" ,false);
+        isTemporarilyUnlocked      = preferences.getBoolean (   "isTemporarilyUnlocked", false);
+        endOfUnlockTimestamp = preferences.getLong("endOfUnlockTimestamp"  ,0);
+
+
 
 
         final CircleProgressBar circleProgressBar = (CircleProgressBar) findViewById(R.id.custom_progressBar);
@@ -209,7 +199,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
+                isRunningLockingService = preferences.getBoolean("isRunningLockingService", false);
+                if(isRunningLockingService /*serviceStatuses.isRunningLockingService.get()*/){
                 final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
                 final View mView = getLayoutInflater().inflate(R.layout.dialog_login, null);
                 final EditText mEmail = (EditText) mView.findViewById(R.id.etPassword);
@@ -244,9 +235,14 @@ public class MainActivity extends AppCompatActivity {
 
                                     Toast.makeText(MainActivity.this, "lock disabled for " + mEmail.getText().toString() + " minutes", Toast.LENGTH_LONG).show();
 
-                                    lockDisableTime = Integer.parseInt( mEmail.getText().toString() );
-                                    serviceStatuses.endOfUnlockTimestamp.set(Calendar.getInstance().getTimeInMillis() + lockDisableTime*60000);
-                                    serviceStatuses.isTemporarilyUnlocked.set(true);
+                                    lockDisableTime = Integer.parseInt(mEmail.getText().toString());
+
+                                    isTemporarilyUnlocked = true;
+                                    endOfUnlockTimestamp = Calendar.getInstance().getTimeInMillis() + lockDisableTime * 60000;
+                                    //editor.putLong("endOfUnlockTimestamp", endOfUnlockTimestamp);
+
+                                    //serviceStatuses.endOfUnlockTimestamp.set(Calendar.getInstance().getTimeInMillis() + lockDisableTime * 60000);
+                                    //serviceStatuses.isTemporarilyUnlocked.set(true);
 
                                     //starting the notification "alarm", this is the only function that uses this currently but it could be
                                     //used on other ones later
@@ -254,12 +250,14 @@ public class MainActivity extends AppCompatActivity {
 
                                     lockOn = false;
                                     LockString = "UNLOCKED";
-                                    lockStatus.setText(""+LockString);
+                                    lockStatus.setText("" + LockString);
+                                    editor.putBoolean("isTemporarilyUnlocked", isTemporarilyUnlocked);
+                                    editor.putLong("endOfUnlockTimestamp", endOfUnlockTimestamp);
+                                    editor.commit();
                                     dialog.dismiss();
 
                                 }
                             });
-
 
 
                         } else {
@@ -268,7 +266,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
-
+            }
+            else{
+                    Toast.makeText(MainActivity.this, "Everything is already unlocked right now.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -278,7 +279,8 @@ public class MainActivity extends AppCompatActivity {
         buttonLock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                isTemporarilyUnlocked = preferences.getBoolean("isTemporarilyUnlocked", false);
+                // if(!isTemporarilyUnlocked /*!serviceStatuses.isTemporarilyUnlocked.get()*/){
                 final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
                 final View mView = getLayoutInflater().inflate(R.layout.dialog_login, null);
                 final EditText mEmail = (EditText) mView.findViewById(R.id.etPassword);
@@ -320,45 +322,48 @@ public class MainActivity extends AppCompatActivity {
                                     sliderPercent = 0;
 
 
-
                                     Toast.makeText(MainActivity.this, "step goal updated.", Toast.LENGTH_LONG).show();
 
 
-
-
-                                    AlarmManager manager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+                                    AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                                     Intent myIntent;
                                     PendingIntent pendingIntent;
-                                    myIntent = new Intent(getApplicationContext(),AlarmNotificationReceiver.class);
-                                    pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),1,myIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+                                    myIntent = new Intent(getApplicationContext(), AlarmNotificationReceiver.class);
+                                    pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 1, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
 
                                     manager.cancel(pendingIntent);
 
 
+                                    //serviceStatuses.isRunningLockingService.set(true);
+                                    isRunningLockingService = true;
+                                    editor.putBoolean("isRunningLockingService", isRunningLockingService);
+                                    isTemporarilyUnlocked = false;
+                                    editor.putBoolean("isTemporarilyUnlocked", isTemporarilyUnlocked);
+                                    editor.commit();
 
-                                    serviceStatuses.isRunningLockingService.set(true);
+
+
                                     lockOn = true;
                                     LockString = "LOCKED";
-                                    lockStatus.setText(""+LockString);
+                                    lockStatus.setText("" + LockString);
                                     dialog.dismiss();
-                                    startService(new Intent(getApplicationContext(),LockingService.class));
+                                    startService(new Intent(getApplicationContext(), LockingService.class));
 
-                                    editor.putInt("stepGoal",stepGoal);
-                                    editor.putInt("stepCounter",stepCounter);
-                                    editor.putInt("sliderPercent",sliderPercent);
-                                    editor.putInt("stepCounting",stepCounting);
-                                    editor.putBoolean("lockOn",lockOn);
-                                    editor.putString("LockString",LockString);
-                                    editor.apply();
-                                    editor.apply();
+                                    editor.putInt("stepGoal", stepGoal);
+                                    editor.putInt("stepCounter", stepCounter);
+                                    editor.putInt("sliderPercent", sliderPercent);
+                                    editor.putInt("stepCounting", stepCounting);
+                                    editor.putBoolean("lockOn", lockOn);
+                                    editor.putString("LockString", LockString);
+                                    editor.commit();
+                                   // editor.apply();
 
 
                                 }
                             });
 
                             //this will call an activity with the list of apps
-
                         } else {
                             Toast.makeText(MainActivity.this, "bad pin", Toast.LENGTH_SHORT).show();
 
@@ -366,11 +371,14 @@ public class MainActivity extends AppCompatActivity {
                     }
 
 
-
                 });
-
+           /* }
+                 else{
+                     Toast.makeText(MainActivity.this, "The apps will lock after the timer is up.", Toast.LENGTH_SHORT).show();
+                 }*/
             }
         });
+
 
         /////////////////////////////////////////////////////////////////////////////////////////
         //this is all code for the unlock button button/////////////////////////////////////////////////
@@ -378,61 +386,70 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
-                final View mView = getLayoutInflater().inflate(R.layout.dialog_login, null);
-                final EditText mEmail = (EditText) mView.findViewById(R.id.etPassword);
-                Button mLogin = (Button) mView.findViewById(R.id.btnLogin);
-                mBuilder.setView(mView);
+                isRunningLockingService = preferences.getBoolean("isRunningLockingService", false);
+                if(isRunningLockingService) {
+                    final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                    final View mView = getLayoutInflater().inflate(R.layout.dialog_login, null);
+                    final EditText mEmail = (EditText) mView.findViewById(R.id.etPassword);
+                    Button mLogin = (Button) mView.findViewById(R.id.btnLogin);
+                    mBuilder.setView(mView);
 
-                final AlertDialog dialog = mBuilder.create();
-                dialog.show();
+                    final AlertDialog dialog = mBuilder.create();
+                    dialog.show();
 
-                mLogin.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (!mEmail.getText().toString().isEmpty()) {
-                            Toast.makeText(MainActivity.this, "Admin privileges granted", Toast.LENGTH_SHORT).show();
-                            dialog.dismiss();
+                    mLogin.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if (!mEmail.getText().toString().isEmpty()) {
+                                Toast.makeText(MainActivity.this, "Admin privileges granted", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
 
-                            final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
-                            final View mView = getLayoutInflater().inflate(R.layout.confirmdialog, null);
-                            final EditText mEmail = (EditText) mView.findViewById(R.id.etPassword);
-                            Button mLogin = (Button) mView.findViewById(R.id.btnLogin);
-                            mBuilder.setView(mView);
-                            final AlertDialog dialog = mBuilder.create();
-                            dialog.show();
+                                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                                final View mView = getLayoutInflater().inflate(R.layout.confirmdialog, null);
+                                final EditText mEmail = (EditText) mView.findViewById(R.id.etPassword);
+                                Button mLogin = (Button) mView.findViewById(R.id.btnLogin);
+                                mBuilder.setView(mView);
+                                final AlertDialog dialog = mBuilder.create();
+                                dialog.show();
 
 
-                            //this is the action listener for the inner-menu on the unlock. it SHOULD NOT bring up list of apps. ONLY the "lock" trigger should do that.
+                                //this is the action listener for the inner-menu on the unlock. it SHOULD NOT bring up list of apps. ONLY the "lock" trigger should do that.
 
-                            mLogin.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    //TODO
-                                    Toast.makeText(MainActivity.this, "lock disabled. Use lock to reactivate.", Toast.LENGTH_LONG).show();
-                                    serviceStatuses.needToStopLockingService.set(true);
-                                    lockOn = false;
-                                    LockString = "UNLOCKED";
-                                    lockStatus.setText(""+LockString);
-                                    dialog.dismiss();
+                                mLogin.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        //TODO
+                                        Toast.makeText(MainActivity.this, "lock disabled. Use lock to reactivate.", Toast.LENGTH_LONG).show();
+                                        needToStopLockingService = true;
+                                        editor.putBoolean("needToStopLockingService", needToStopLockingService);
+                                        //serviceStatuses.needToStopLockingService.set(true);
+                                        editor.commit();
+                                        lockOn = false;
+                                        LockString = "UNLOCKED";
+                                        lockStatus.setText("" + LockString);
+                                        dialog.dismiss();
 
-                                    editor.putInt("stepGoal",stepGoal);
-                                    editor.putInt("stepCounter",stepCounter);
-                                    editor.putInt("sliderPercent",sliderPercent);
-                                    editor.putInt("stepCounting",stepCounting);
-                                    editor.putBoolean("lockOn",lockOn);
-                                    editor.putString("LockString",LockString);
-                                    editor.apply();
+                                        editor.putInt("stepGoal", stepGoal);
+                                        editor.putInt("stepCounter", stepCounter);
+                                        editor.putInt("sliderPercent", sliderPercent);
+                                        editor.putInt("stepCounting", stepCounting);
+                                        editor.putBoolean("lockOn", lockOn);
+                                        editor.putString("LockString", LockString);
+                                        editor.commit();
 
-                                }
-                            });
+                                    }
+                                });
 
-                        } else {
-                            Toast.makeText(MainActivity.this, "bad pin", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(MainActivity.this, "bad pin", Toast.LENGTH_SHORT).show();
 
+                            }
                         }
-                    }
-                });
+                    });
+                }
+                else{
+                    Toast.makeText(MainActivity.this, "Everything is alreaady unlocked.", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -472,11 +489,14 @@ public class MainActivity extends AppCompatActivity {
                     circleProgressBar.setProgressWithAnimation(100);
                     lowerText.setText("" + 100 + "%");
 
-                    serviceStatuses.needToStopLockingService.set(true);
+                    needToStopLockingService = true;
+                    editor.putBoolean("needToStopLockingService", needToStopLockingService);
+                    //serviceStatuses.needToStopLockingService.set(true);
 
                     lockOn = false;
                     LockString = "UNLOCKED";
                     lockStatus.setText("" + LockString);
+                    editor.commit();
 
 
                 }
@@ -488,7 +508,7 @@ public class MainActivity extends AppCompatActivity {
                 editor.putInt("stepCounting",stepCounting);
                 editor.putBoolean("lockOn",lockOn);
                 editor.putString("LockString",LockString);
-                editor.apply();
+                editor.commit();
 
 
 
@@ -552,12 +572,19 @@ public class MainActivity extends AppCompatActivity {
       //  lowerText.setText("" + sliderPercent + "%");
 
         if (sliderPercent == 100) {
-
+            isRunningLockingService = false;
+            editor.putBoolean("isRunningLockingService", isRunningLockingService);
+            editor.commit();
+            //serviceStatuses.isRunningLockingService.set(false);
             lockOn = false;
             LockString = "UNLOCKED";
             lockStatus.setText("UNLOCKED");
         }
         if (sliderPercent != 100) {
+            //serviceStatuses.isRunningLockingService.set(true);
+            isRunningLockingService = true;
+            editor.putBoolean("isRunningLockingService", isRunningLockingService);
+            editor.commit();
             lockOn = true;
             LockString = "LOCKED";
             lockStatus.setText("" + LockString);
@@ -578,7 +605,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void LockApps(){
-
+        //serviceStatuses.isRunningLockingService.set(true);
         lockOn = true;
         LockString = "LOCKED";
         lockStatus.setText(""+LockString);
@@ -586,7 +613,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void updateUI(){
-
+        //serviceStatuses.isRunningLockingService.set(true);
         lockOn = true;
         LockString = "LOCKED";
         lockStatus.setText(""+LockString);

@@ -9,6 +9,7 @@ import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -49,6 +50,16 @@ public class LockingService extends IntentService {
     public static long lastTimeStamp = 0;
     public static boolean getFirstTimeStamp = true;
 
+    public static boolean isRunningLockingService;
+    public static boolean needToUpdateWhiteList ;
+    public static boolean needToStopLockingService ;
+    public static boolean isTemporarilyUnlocked ;
+    public static long endOfUnlockTimestamp;
+
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+
+
     public LockingService() {
         super("LockingService");
     }
@@ -71,10 +82,23 @@ public class LockingService extends IntentService {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         super.onStartCommand(intent, flags, startId);
+
+        preferences = this.getSharedPreferences("myPrefs", MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(this);
+        editor = preferences.edit();
+
         appPath = getApplicationContext().getFilesDir();
-        serviceStatuses = new ServiceStatuses();
-        serviceStatuses.isRunningLockingService.set(true);
-        serviceStatuses.needToUpdateWhiteList.set(true);
+
+
+        isRunningLockingService = preferences.getBoolean("isRunningLockingService",true);
+        needToUpdateWhiteList  = preferences.getBoolean("needToUpdateWhiteList", true);
+        needToStopLockingService  = preferences.getBoolean ("needToStopLockingService" ,false);
+        isTemporarilyUnlocked      = preferences.getBoolean (   "isTemporarilyUnlocked", false);
+        endOfUnlockTimestamp = preferences.getLong("endOfUnlockTimestamp"  ,0);
+
+        //TODO
+        //serviceStatuses = new ServiceStatuses();
+        //serviceStatuses.isRunningLockingService.set(true);
+        //serviceStatuses.needToUpdateWhiteList.set(true);
         whiteList = new ArrayList<String>();
         populateWhiteList();
         Log.d("LockingService", "service launched");
@@ -98,34 +122,54 @@ public class LockingService extends IntentService {
          */
         while (true) {
             Log.d("LockingService", "currentTimestamp: " + Calendar.getInstance().getTimeInMillis());
-            if(serviceStatuses.needToStopLockingService.get()){
+            needToStopLockingService =  preferences.getBoolean("needToStopLockingService", false);
+            needToUpdateWhiteList = preferences.getBoolean("needToUpdateWhiteList", false);
+            isTemporarilyUnlocked = preferences.getBoolean("isTemporarilyUnlocked", false);
+
+            if(needToStopLockingService /*serviceStatuses.needToStopLockingService.get()*/){
                 /*close the service*/
-                serviceStatuses.needToStopLockingService.set(false);
-                serviceStatuses.isRunningLockingService.set(false);
+                //serviceStatuses.needToStopLockingService.set(false);
+                //serviceStatuses.isRunningLockingService.set(false);
+                needToStopLockingService = false;
+                isRunningLockingService = false;
+                editor.putBoolean("needToStopLockingService", needToStopLockingService);
+                editor.putBoolean("isRunningLockingService", isRunningLockingService);
+                editor.commit();
                 this.stopSelf();
                 break;
-            }else if(serviceStatuses.needToUpdateWhiteList.get()){
+            }else if(needToUpdateWhiteList /*serviceStatuses.needToUpdateWhiteList.get()*/){
                 /*update whitelist*/
-                serviceStatuses.needToUpdateWhiteList.set(false);
+                //serviceStatuses.needToUpdateWhiteList.set(false);
+                needToUpdateWhiteList = false;
+                editor.putBoolean("needToUpdateWhiteList",needToUpdateWhiteList);
+                editor.commit();
                 populateWhiteList();
             }
 
-            if(serviceStatuses.isTemporarilyUnlocked.get()){
+            if(isTemporarilyUnlocked /*serviceStatuses.isTemporarilyUnlocked.get()*/){
+
+                /////////////old code
                 /*
                 if(getFirstTimeStamp){
                     lastTimeStamp = Calendar.getInstance().getTimeInMillis();
                     getFirstTimeStamp = false;
                 }
                 */
-                Log.d("lock", "timeRemaining: " + serviceStatuses.endOfUnlockTimestamp);
+                Log.d("lock", "timeRemaining: " + endOfUnlockTimestamp /*serviceStatuses.endOfUnlockTimestamp*/);
                 //Log.d("lock", "timeRemaining: " + serviceStatuses.remainingUnlockedTime);
                 /*
                 serviceStatuses.remainingUnlockedTime.set(
                         serviceStatuses.remainingUnlockedTime.get() -
                                 Calendar.getInstance().getTimeInMillis() - lastTimeStamp);
                                 */
-                if(serviceStatuses.endOfUnlockTimestamp.get() <= Calendar.getInstance().getTimeInMillis()){
-                    serviceStatuses.isTemporarilyUnlocked.set(false);
+                /////////////end of old code
+
+                endOfUnlockTimestamp = preferences.getLong("endOfUnlockTimestamp", 0);
+                if( endOfUnlockTimestamp /*serviceStatuses.endOfUnlockTimestamp.get()*/ <= Calendar.getInstance().getTimeInMillis()){
+                    //serviceStatuses.isTemporarilyUnlocked.set(false);
+                    isTemporarilyUnlocked = false;
+                    editor.putBoolean("isTemporarilyUnlocked", isTemporarilyUnlocked);
+                    editor.commit();
                     //maybe set other conditions
                 }
             }
@@ -161,14 +205,13 @@ public class LockingService extends IntentService {
         super.onTaskRemoved(rootIntent);
     }
 
-    /*packageManager finds all the packages, all packages except this app and
-     *   system apps are added to the whitelist. Loads whiteList from a file also
-     */
 
-/*will never save system apps to hard storage rightnow. may keep adding values to the whitelist*/
+
+
     private void populateWhiteList() {
 
         File f = new File(appPath+"/"+WHITE_LIST);
+        boolean creatingFile = ! f.exists();
         if(f.exists() && !f.isDirectory()) {
             try {
                 Log.d("qwe", "before read whiteList:  " + whiteList.toString());
@@ -198,17 +241,24 @@ public class LockingService extends IntentService {
         for (int i = 0; i < packs.size(); i++) {
             PackageInfo p = packs.get(i);
             ApplicationInfo a = p.applicationInfo;
-            // skip system apps if they shall not be included
-            if ((a.flags & ApplicationInfo.FLAG_SYSTEM) == 1) {
+            //boolean isSystemApp = false;
+
+            // handle system apps
+            if ((a.flags & ApplicationInfo.FLAG_SYSTEM) == 1 && creatingFile) {
                 whiteList.add(p.packageName);//continue;
+                //isSystemApp = true;
             }
+
             Log.d("LockingService", "PackageName: " + p.packageName);
             if (MainActivity.class.getPackage().getName().equals(p.packageName)) {
                 whiteList.add(p.packageName);
             }
         }
         //Log.d("LockingService", "BlockedApps: " + whiteList.toString());
-        serviceStatuses.needToUpdateWhiteList.set(false);
+        needToUpdateWhiteList  = false;
+        editor.putBoolean("needToUpdateWhiteList", needToUpdateWhiteList);
+        editor.commit();
+        //serviceStatuses.needToUpdateWhiteList.set(false);
     }
 
     /*Finds the app that is currently running*/
