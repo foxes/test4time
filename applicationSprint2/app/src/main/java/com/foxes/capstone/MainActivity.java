@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,10 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    public FitbitCommunication comm = new FitbitCommunication();
+    public DateUtil dateUtil = new DateUtil();
 
+    public String timeStamp = "";
 
 
 
@@ -72,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int mSelectedColor;
 
+
     public static boolean isRunningLockingService;
     public static boolean needToUpdateWhiteList ;
     public static boolean needToStopLockingService ;
@@ -83,8 +88,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (android.os.Build.VERSION.SDK_INT > 9){
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
+
 
 
         //pulling variables from sharedPreferences. basically memory
@@ -313,10 +324,11 @@ public class MainActivity extends AppCompatActivity {
                                     stepGoal = Integer.parseInt(mEmail.getText().toString());
 
                                     //pull from fitbit API when lock is set to set a baseline for later
-                                    //baselineSteps = *insert fitbpit pull @ current time here*
+                                    comm.connectToFitbit();
+                                    baselineSteps = comm.getSteps();
 
                                     //delete this later keep above ^
-                                    baselineSteps = 0;
+                                    //baselineSteps = 0;
 
                                     lowerText.setText("" + 0 + "%");
                                     middleText.setText("" + stepGoal);
@@ -456,20 +468,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
                 //this stuff is just for demoing since we dont have the api ready to pull yet
-                Random rand = new Random();
-                int n = rand.nextInt(5);
+                //Random rand = new Random();
+                //int n = rand.nextInt(5);
 
                 //for later
-                //int tmpStep = comm.getSteps();
-                //stepCounter = tmpStep - baselineSteps;
-                //stepCounting = stepGoal - stepCounter
-               //baselineSteps = tmpStep;
+                comm.connectToFitbit();
+                 int tmpStep = comm.getSteps();
+                 stepCounter = stepCounter + (tmpStep - baselineSteps);
+                 stepCounting = stepGoal - stepCounter;
+                 baselineSteps = tmpStep;
 
                 //delete these, keep above ^
-                stepCounter = stepCounter + n;
-                stepCounting = stepGoal - stepCounter;
+                //stepCounter = stepCounter + n;
+                //stepCounting = stepGoal - stepCounter;
 
                 if (stepCounter < stepGoal) {
 
@@ -516,6 +528,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+
 
     }
     /////////////////////////////////////////////////////////////////////////////////////////

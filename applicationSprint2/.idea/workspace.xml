@@ -9,7 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aac7c772-f2a2-434d-9a6d-967ec1924a33" name="Default" comment="" />
+    <list default="true" id="efda70eb-339c-469b-8724-c94f4f5951f4" name="Default" comment="" />
     <ignored path="applicationSprint2.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,10 +37,35 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="473" column="45" selection-start-line="0" selection-start-column="0" selection-end-line="616" selection-end-column="0" />
+            <state relative-caret-position="295">
+              <caret line="478" column="55" selection-start-line="478" selection-start-column="55" selection-end-line="478" selection-end-column="55" />
               <folding>
-                <marker date="1491773966526" expanded="false" signature="19405:19500" ph="(view) → {" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#6307#6342#0" expanded="true" />
+                <element signature="e#6532#6815#0" expanded="true" />
+                <element signature="e#6814#6815#0" expanded="true" />
+                <element signature="e#6855#7047#0" expanded="true" />
+                <element signature="e#7046#7047#0" expanded="true" />
+                <element signature="e#7197#10863#0" expanded="true" />
+                <element signature="e#8021#10660#0" expanded="true" />
+                <element signature="e#9232#10455#0" expanded="true" />
+                <element signature="e#10454#10455#0" expanded="true" />
+                <element signature="e#10659#10660#0" expanded="true" />
+                <element signature="e#10862#10863#0" expanded="true" />
+                <element signature="e#11107#15838#0" expanded="true" />
+                <element signature="e#11927#15624#0" expanded="true" />
+                <element signature="e#13001#15339#0" expanded="true" />
+                <element signature="e#15338#15339#0" expanded="true" />
+                <element signature="e#15623#15624#0" expanded="true" />
+                <element signature="e#15837#15838#0" expanded="true" />
+                <element signature="e#16086#19582#0" expanded="true" />
+                <element signature="e#16893#19379#0" expanded="true" />
+                <element signature="e#18095#19155#0" expanded="true" />
+                <element signature="e#19154#19155#0" expanded="true" />
+                <element signature="e#19378#19379#0" expanded="true" />
+                <element signature="e#19581#19582#0" expanded="true" />
+                <element signature="e#19832#21952#0" expanded="true" />
+                <element signature="e#21951#21952#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1468,7 +1493,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="C:\Users\Fenrir\Desktop\test4time-alan_locker_branch_2\applicationSprint2" value="4475143068000" />
+        <entry key="C:\Users\Fenrir\Desktop\sprint3 test\test4time\applicationSprint2" value="4475143068000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1804,15 +1829,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/DateUtil.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/FitbitCommunication.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/MainActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="179" />
+    <option name="y" value="66" />
+    <option name="width" value="1515" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -1839,13 +1867,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="applicationSprint2" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1876,19 +1910,36 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="applicationSprint2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../New folder (4)/test4time-FletcherBranch/sprint3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../New folder (4)/test4time-FletcherBranch/sprint3" />
     <property name="device.picker.selection" value="Nexus_5X_API_23" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.foxes.capstone" />
+    </key>
   </component>
   <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
@@ -2183,36 +2234,36 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="aac7c772-f2a2-434d-9a6d-967ec1924a33" name="Default" comment="" />
-      <created>1491762384797</created>
+      <changelist id="efda70eb-339c-469b-8724-c94f4f5951f4" name="Default" comment="" />
+      <created>1491774820643</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1491762384797</updated>
+      <updated>1491774820643</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="7" />
+    <frame x="179" y="66" width="1515" height="1084" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.69438446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07775378" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19349681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24948454" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2240,28 +2291,240 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="1" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1491773966526" expanded="false" signature="19405:19500" ph="(view) → {" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#6307#6342#0" expanded="true" />
+            <element signature="e#6532#6815#0" expanded="true" />
+            <element signature="e#6814#6815#0" expanded="true" />
+            <element signature="e#6855#7047#0" expanded="true" />
+            <element signature="e#7046#7047#0" expanded="true" />
+            <element signature="e#7197#10863#0" expanded="true" />
+            <element signature="e#8021#10660#0" expanded="true" />
+            <element signature="e#9232#10455#0" expanded="true" />
+            <element signature="e#10454#10455#0" expanded="true" />
+            <element signature="e#10659#10660#0" expanded="true" />
+            <element signature="e#10862#10863#0" expanded="true" />
+            <element signature="e#11107#15838#0" expanded="true" />
+            <element signature="e#11927#15624#0" expanded="true" />
+            <element signature="e#13001#15339#0" expanded="true" />
+            <element signature="e#15338#15339#0" expanded="true" />
+            <element signature="e#15623#15624#0" expanded="true" />
+            <element signature="e#15837#15838#0" expanded="true" />
+            <element signature="e#16086#19582#0" expanded="true" />
+            <element signature="e#16893#19379#0" expanded="true" />
+            <element signature="e#18095#19155#0" expanded="true" />
+            <element signature="e#19154#19155#0" expanded="true" />
+            <element signature="e#19378#19379#0" expanded="true" />
+            <element signature="e#19581#19582#0" expanded="true" />
+            <element signature="e#19832#21952#0" expanded="true" />
+            <element signature="e#21951#21952#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6307#6342#0" expanded="true" />
+            <element signature="e#6532#6815#0" expanded="true" />
+            <element signature="e#6814#6815#0" expanded="true" />
+            <element signature="e#6855#7047#0" expanded="true" />
+            <element signature="e#7046#7047#0" expanded="true" />
+            <element signature="e#7197#10863#0" expanded="true" />
+            <element signature="e#8021#10660#0" expanded="true" />
+            <element signature="e#9232#10455#0" expanded="true" />
+            <element signature="e#10454#10455#0" expanded="true" />
+            <element signature="e#10659#10660#0" expanded="true" />
+            <element signature="e#10862#10863#0" expanded="true" />
+            <element signature="e#11107#15838#0" expanded="true" />
+            <element signature="e#11927#15624#0" expanded="true" />
+            <element signature="e#13001#15339#0" expanded="true" />
+            <element signature="e#15338#15339#0" expanded="true" />
+            <element signature="e#15623#15624#0" expanded="true" />
+            <element signature="e#15837#15838#0" expanded="true" />
+            <element signature="e#16086#19582#0" expanded="true" />
+            <element signature="e#16893#19379#0" expanded="true" />
+            <element signature="e#18095#19155#0" expanded="true" />
+            <element signature="e#19154#19155#0" expanded="true" />
+            <element signature="e#19378#19379#0" expanded="true" />
+            <element signature="e#19581#19582#0" expanded="true" />
+            <element signature="e#19832#21952#0" expanded="true" />
+            <element signature="e#21951#21952#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+          <folding>
+            <element signature="e#260#278#0" expanded="true" />
+            <element signature="e#816#834#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/AccessibilityPermissionFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/AccessibilityRequestActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/AlarmNotificationReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/PackageObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/FitbitCommunication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/foxes/capstone/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="473" column="45" selection-start-line="0" selection-start-column="0" selection-end-line="616" selection-end-column="0" />
+        <state relative-caret-position="295">
+          <caret line="478" column="55" selection-start-line="478" selection-start-column="55" selection-end-line="478" selection-end-column="55" />
           <folding>
-            <marker date="1491773966526" expanded="false" signature="19405:19500" ph="(view) → {" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#6307#6342#0" expanded="true" />
+            <element signature="e#6532#6815#0" expanded="true" />
+            <element signature="e#6814#6815#0" expanded="true" />
+            <element signature="e#6855#7047#0" expanded="true" />
+            <element signature="e#7046#7047#0" expanded="true" />
+            <element signature="e#7197#10863#0" expanded="true" />
+            <element signature="e#8021#10660#0" expanded="true" />
+            <element signature="e#9232#10455#0" expanded="true" />
+            <element signature="e#10454#10455#0" expanded="true" />
+            <element signature="e#10659#10660#0" expanded="true" />
+            <element signature="e#10862#10863#0" expanded="true" />
+            <element signature="e#11107#15838#0" expanded="true" />
+            <element signature="e#11927#15624#0" expanded="true" />
+            <element signature="e#13001#15339#0" expanded="true" />
+            <element signature="e#15338#15339#0" expanded="true" />
+            <element signature="e#15623#15624#0" expanded="true" />
+            <element signature="e#15837#15838#0" expanded="true" />
+            <element signature="e#16086#19582#0" expanded="true" />
+            <element signature="e#16893#19379#0" expanded="true" />
+            <element signature="e#18095#19155#0" expanded="true" />
+            <element signature="e#19154#19155#0" expanded="true" />
+            <element signature="e#19378#19379#0" expanded="true" />
+            <element signature="e#19581#19582#0" expanded="true" />
+            <element signature="e#19832#21952#0" expanded="true" />
+            <element signature="e#21951#21952#0" expanded="true" />
           </folding>
         </state>
       </provider>
