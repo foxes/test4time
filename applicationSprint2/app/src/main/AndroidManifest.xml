@@ -32,9 +32,15 @@
             android:name="AccessibilityRequestActivity"
             android:label="Accessibility Request" />
 
+        <receiver android:name=".AutoStart">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
         <receiver android:name=".AlarmNotificationReceiver"/>
         <receiver android:name=".AlarmToastReceiver"/>
+        <receiver android:name=".AlarmLockerReset"/>
     </application>
 
     <uses-permission xmlns:tools="http://schemas.android.com/tools"
@@ -42,5 +48,6 @@
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
 
 </manifest>
