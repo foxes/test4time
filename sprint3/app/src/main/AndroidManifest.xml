@@ -19,6 +19,15 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ChromeCustomTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="test4time" android:host="logincallback"/>
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".WhiteListView"
             android:label="@string/app_name" >
