@@ -22,6 +22,7 @@ public class DateUtil {
     public int getMonth(){
 
         int month = cal.get(Calendar.MONTH);
+        month++;
         return month;
     }
 
