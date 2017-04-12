@@ -4,63 +4,47 @@ package com.foxes.capstone;
 import android.app.AlarmManager;
 import android.app.AppOpsManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
+import android.support.customtabs.CustomTabsClient;
+import android.support.customtabs.CustomTabsIntent;
+import android.support.customtabs.CustomTabsServiceConnection;
+import android.support.customtabs.CustomTabsSession;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.app.Fragment;
-
-import android.graphics.Color;
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.SeekBar;
-
-
-import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 
 import org.xdty.preference.colorpicker.ColorPickerDialog;
 import org.xdty.preference.colorpicker.ColorPickerSwatch;
 
 import java.util.Calendar;
-import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private String url = "https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=2284LL&redirect_uri=test4time://logincallback&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20weight&expires_in=86400&prompt=login";
 
     private FitbitCommunication comm = new FitbitCommunication();
     public DateUtil dateUtil = new DateUtil();
+
+    CustomTabsClient mCustomTabsClient;
+    CustomTabsSession mCustomTabsSession;
+    CustomTabsServiceConnection mCustomTabsServiceConnection;
+    CustomTabsIntent mCustomTabsIntent;
+    final String CUSTOM_TAB_PACKAGE_NAME = "com.android.chrome";
 
     public String timeStamp = "";
 
@@ -104,7 +88,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Intent authIntent = new Intent(this, com.foxes.capstone.ChromeCustomTabActivity.class);
+
         setContentView(R.layout.activity_main);
+
+        mCustomTabsServiceConnection = new CustomTabsServiceConnection(){
+            @Override
+            public void onCustomTabsServiceConnected(ComponentName componentName, CustomTabsClient customTabsClient){
+                mCustomTabsClient = customTabsClient;
+                mCustomTabsClient.warmup(0L);
+                mCustomTabsSession = mCustomTabsClient.newSession(null);
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name){mCustomTabsClient = null;}
+
+        };
+
+        CustomTabsClient.bindCustomTabsService(this, CUSTOM_TAB_PACKAGE_NAME, mCustomTabsServiceConnection);
+
+        mCustomTabsIntent = new CustomTabsIntent.Builder(mCustomTabsSession).setShowTitle(true).build();
+
+
         if (android.os.Build.VERSION.SDK_INT > 9){
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
@@ -505,7 +511,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("timeStamp: " + timeStamp);
 
                 stepCounter += tmpStep;
-                
+
 
                 if(stepCounter < stepGoal) {
                     stepCounting = stepGoal - tmpStep;
@@ -646,10 +652,23 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+    @Override
+    protected void onNewIntent(Intent intent){
+
+        super.onNewIntent(intent);
+    }
+
+    public void authURL(View view){
+
+        mCustomTabsIntent.launchUrl(this, Uri.parse(url));
+    }
+
 
 
 
 }
+
+
 
 
 
