@@ -1,0 +1,19 @@
+#Sat Mar 18 16:40:51 EDT 2017
+renamed.5=classes3.dex
+renamed.4=classes2.dex
+renamed.3=classes.dex
+renamed.2=classes6.dex
+renamed.1=classes4.dex
+renamed.0=classes5.dex
+base.5=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_82d33b177d39c5406fde91fafab479664ecce89d
+base.4=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_828c90494f8a402679137d004fb6b0e477ab3251
+base.3=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_06f7aebf50c779b74ab03267daff0b3204079f70
+base.2=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-23.4.0_8cc1a0f893a8354fda9caaf0c344f8e37b0db7c5
+base.1=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_acf85ed4c697dd306cde249cae544908b1d59b6b
+base.0=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\internal_impl-23.4.0_3b2cadafbbe74c8dbe2f814b78bb828001702f8d
+file.5=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_82d33b177d39c5406fde91fafab479664ecce89d\\classes.dex
+file.4=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_828c90494f8a402679137d004fb6b0e477ab3251\\classes.dex
+file.3=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_06f7aebf50c779b74ab03267daff0b3204079f70\\classes.dex
+file.2=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-23.4.0_8cc1a0f893a8354fda9caaf0c344f8e37b0db7c5\\classes.dex
+file.1=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_acf85ed4c697dd306cde249cae544908b1d59b6b\\classes.dex
+file.0=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\internal_impl-23.4.0_3b2cadafbbe74c8dbe2f814b78bb828001702f8d\\classes.dex
