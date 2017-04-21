@@ -11,7 +11,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,7 +23,6 @@ import org.xdty.preference.colorpicker.ColorPickerDialog;
 import org.xdty.preference.colorpicker.ColorPickerSwatch;
 
 import java.util.Calendar;
-import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -619,6 +617,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putBoolean("needToStopLockingService", needToStopLockingService);
         editor.putLong("endOfUnlockTimestamp", endOfUnlockTimestamp);
         editor.putInt("mSelectedColor", mSelectedColor);
+        editor.putBoolean("needToUpdateWhiteList", needToUpdateWhiteList);
         editor.commit();
 
 

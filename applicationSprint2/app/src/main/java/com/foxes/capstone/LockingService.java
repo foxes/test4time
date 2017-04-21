@@ -25,6 +25,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -59,6 +60,10 @@ public class LockingService extends IntentService {
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
 
+    private static Intent alarmIntent = null;
+    private static PendingIntent pendingIntent = null;
+    private static AlarmManager alarmManager = null;
+
 
     public LockingService() {
         super("LockingService");
@@ -83,6 +88,7 @@ public class LockingService extends IntentService {
     public int onStartCommand(Intent intent, int flags, int startId) {
         super.onStartCommand(intent, flags, startId);
 
+        /*
         preferences = this.getSharedPreferences("myPrefs", MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(this);
         editor = preferences.edit();
 
@@ -102,6 +108,7 @@ public class LockingService extends IntentService {
         whiteList = new ArrayList<String>();
         populateWhiteList();
         Log.d("LockingService", "service launched");
+        */
         return START_STICKY;
     }
 
@@ -109,6 +116,57 @@ public class LockingService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         // USES API 21
         // open settings to let user grant access to usage data
+
+        /////////////////////////////////////
+        preferences = this.getSharedPreferences("myPrefs", MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(this);
+        editor = preferences.edit();
+
+        appPath = getApplicationContext().getFilesDir();
+
+
+        isRunningLockingService = preferences.getBoolean("isRunningLockingService",true);
+        needToUpdateWhiteList  = preferences.getBoolean("needToUpdateWhiteList", true);
+        needToStopLockingService  = preferences.getBoolean ("needToStopLockingService" ,false);
+        isTemporarilyUnlocked      = preferences.getBoolean (   "isTemporarilyUnlocked", false);
+        endOfUnlockTimestamp = preferences.getLong("endOfUnlockTimestamp"  ,0);
+
+        //TODO
+        //serviceStatuses = new ServiceStatuses();
+        //serviceStatuses.isRunningLockingService.set(true);
+        //serviceStatuses.needToUpdateWhiteList.set(true);
+        whiteList = new ArrayList<String>();
+        populateWhiteList();
+        Log.d("LockingService", "service launched");
+
+        // today
+        Calendar date = new GregorianCalendar();
+        // reset hour, minutes, seconds and millis
+        date.set(Calendar.HOUR_OF_DAY, 0);
+        date.set(Calendar.MINUTE, 0);
+        date.set(Calendar.SECOND, 0);
+        date.set(Calendar.MILLISECOND, 0);
+
+        // next day
+        date.add(Calendar.DAY_OF_MONTH, 1);
+       // if(alarmManager != null) {
+            alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        //}
+        alarmIntent = new Intent (this.getApplicationContext() , AlarmLockerReset.class );
+        boolean alarmUp = (PendingIntent.getBroadcast(getApplication(), 0,
+                alarmIntent,
+                PendingIntent.FLAG_NO_CREATE) != null);
+
+        if (alarmUp)
+        {
+            Log.d("myTag", "Alarm is already active");
+        }else {
+
+            // alarmIntent = new Intent ( null, AlarmLockerReset.class );
+            pendingIntent = PendingIntent.getBroadcast(this.getApplicationContext(), 771177, alarmIntent, 0);
+
+            alarmManager.setExact(AlarmManager.RTC, date.getTimeInMillis(), pendingIntent);
+        }
+        //////////////////////////////////////
 
         if (needPermissionForBlocking(this)) {
             Intent settings = new Intent("android.settings.USAGE_ACCESS_SETTINGS");//Settings.ACTION_USAGE_ACCESS_SETTINGS);
@@ -132,6 +190,9 @@ public class LockingService extends IntentService {
                 //serviceStatuses.isRunningLockingService.set(false);
                 needToStopLockingService = false;
                 isRunningLockingService = false;
+                //stop locker reset alarm, comment out if you want to test the alarm fast
+                alarmManager.cancel(PendingIntent.getBroadcast(this.getApplicationContext(), 771177, alarmIntent, 0));
+
                 editor.putBoolean("needToStopLockingService", needToStopLockingService);
                 editor.putBoolean("isRunningLockingService", isRunningLockingService);
                 editor.commit();
@@ -173,15 +234,21 @@ public class LockingService extends IntentService {
                     //maybe set other conditions
                 }
             }
-            else if (!whiteList.contains(getForegroundApp()) ) {
-                Intent mainIntent;
-                mainIntent = new Intent(getApplicationContext(), MainActivity.class);
-                mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                Log.d("LockingService", "App is NOT on the whitelist");
-                startActivity(mainIntent);
-            }else{
-                Log.d("LockingService", "App is on the whitelist");
+            else {
+                String foregroundApp = getForegroundApp();
+                if(whiteList != null && foregroundApp != null && !foregroundApp.isEmpty() ) {
+                    if (!whiteList.contains(foregroundApp)) {
+                        Intent mainIntent;
+                        mainIntent = new Intent(getApplicationContext(), MainActivity.class);
+                        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        Log.d("LockingService", getForegroundApp() + " is NOT on the whitelist");
+                        startActivity(mainIntent);
+                    } else {
+                        Log.d("LockingService", getForegroundApp() + " is on the whitelist");
+                    }
+                }
             }
+
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {

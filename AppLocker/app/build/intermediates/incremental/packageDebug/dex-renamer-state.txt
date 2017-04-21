@@ -1,0 +1,7 @@
+#Sun Mar 19 04:36:32 EDT 2017
+base.0=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_0eb7eac399d16c65b359f23459931460120a04c9
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_e1fcb9b0f4a0c21a7fc44d988a66705c78fb15b3\\classes.dex
+base.1=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_e1fcb9b0f4a0c21a7fc44d988a66705c78fb15b3
+file.0=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\AppLocker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_0eb7eac399d16c65b359f23459931460120a04c9\\classes.dex

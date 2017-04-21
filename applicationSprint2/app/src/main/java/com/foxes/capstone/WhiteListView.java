@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +54,7 @@ public class WhiteListView extends Activity {
     //private boolean alertResult;
     PackageObj packageTemp;
     CheckBox cb;
+    private ArrayList<PackageObj> notListed;
 
 
     private PackageManager mPackageManager = null;
@@ -65,12 +67,31 @@ public class WhiteListView extends Activity {
         //alertResult = false;
 
         whiteList = new ArrayList<String>();
+        notListed = new ArrayList<PackageObj>();
         packageList = new ArrayList<PackageObj>();
         appPath = getApplicationContext().getFilesDir();
         serviceStatuses = new ServiceStatuses();
         //Generate list View from ArrayList
         displayListView();
 
+    }
+    @Override
+    public void onBackPressed() {
+        saveWhiteList();
+        Intent intent = new Intent(this, MainActivity.class);
+        this.startActivity(intent);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            saveWhiteList();
+            Intent intent = new Intent(this, MainActivity.class);
+            this.startActivity(intent);
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 
     /*
@@ -105,12 +126,20 @@ public class WhiteListView extends Activity {
                 whiteList.add(packageTemp.getPackageName());
             }
         }
+
+        for (int i = 0; i < notListed.size(); i++) {
+            PackageObj packageTemp = notListed.get(i);
+            Log.d("qwe", "packageTemp Name:  " + packageTemp.getName() + "isNotBLocked:  " + packageTemp.getIsNotBlocked());
+            if (packageTemp.getIsNotBlocked()) {
+                whiteList.add(packageTemp.getPackageName());
+            }
+        }
         Log.d("qwe", "whiteList:  " + whiteList.toString());
 
         try {
-            File whiteListFile = new File( appPath + "/" + WHITE_LIST);
+            File whiteListFile = new File(appPath + "/" + WHITE_LIST);
 
-            FileOutputStream fos = new FileOutputStream(whiteListFile, false );
+            FileOutputStream fos = new FileOutputStream(whiteListFile, false);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(whiteList);
             oos.close();
@@ -121,7 +150,7 @@ public class WhiteListView extends Activity {
             e.printStackTrace();
         }
         /*need to have LockingService update its whitelist*/
-        if(isMyServiceRunning(LockingService.class)){
+        if (isMyServiceRunning(LockingService.class)) {
             //Intent intent = new Intent(this, LockingService.class);
             //stopService(intent);
             serviceStatuses.needToUpdateWhiteList.set(true);
@@ -150,20 +179,20 @@ public class WhiteListView extends Activity {
         //List<PackageInfo> packs = packageManager.getInstalledPackages(0);
         List<PackageInfo> packs = packageManager.getInstalledPackages(0);
 
-       // mApplications = checkForLaunchIntent(mPackageManager.getInstalledApplications(PackageManager.GET_META_DATA));
+        // mApplications = checkForLaunchIntent(mPackageManager.getInstalledApplications(PackageManager.GET_META_DATA));
 
-        File f = new File(appPath+"/"+WHITE_LIST);
-        boolean creatingFile = ! f.exists();
-        if(f.exists() && !f.isDirectory()) {
+        File f = new File(appPath + "/" + WHITE_LIST);
+        boolean creatingFile = !f.exists();
+        if (f.exists() && !f.isDirectory()) {
             try {
-                Log.d("qwe", "before read whiteList:  " + whiteList.toString());
+                //Log.d("qwe", "before read whiteList:  " + whiteList.toString());
 
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f)); //new FileInputStream(String<>) /*ByteArrayInputStream(baos.toByteArray())*/);
                 whiteList = (ArrayList<String>) ois.readObject();
                 ois.close();
                 //Toast toast = Toast.makeText(this, whiteList.toString(), Toast.LENGTH_SHORT);
                 //toast.show();
-                Log.d("qwe", "Reading whiteList:  " + whiteList.toString());
+                //Log.d("qwe", "Reading whiteList:  " + whiteList.toString());
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -187,10 +216,49 @@ public class WhiteListView extends Activity {
 
 
             Log.d("LockingService", "PackageName: " + p.packageName);
-            if (!MainActivity.class.getPackage().getName().equals(p.packageName)) {
+            try {
+                ApplicationInfo app = this.getPackageManager().getApplicationInfo(p.packageName, 0);
+                String appLabel = "" + packageManager.getApplicationLabel(app);
+                String appLabelLower = appLabel.toLowerCase();
+                boolean hasKeyWords = false;
+
+                //This has a bare bones list, which can improved later.
+                //This could be reworked to only include certain system apps in the list
+                //           instead of only excluding certain system apps.
+                if(isSystemApp){
+                    if(appLabelLower.contains("android")){
+                        hasKeyWords = true;
+                    }
+                    if(appLabelLower.contains("contacts")){
+                        hasKeyWords = true;
+                    }
+                    if(appLabelLower.contains("calender")){
+                        hasKeyWords = true;
+                    }
+                    if(appLabelLower.contains("mobile")){
+                        hasKeyWords = true;
+                    }
+                    if(appLabelLower.contains("phone")){
+                        hasKeyWords = true;
+                    }
+                    if(appLabelLower.contains("system")){
+                        hasKeyWords = true;
+                    }
+                    if(appLabelLower.contains("google") && !appLabelLower.contains("play")){
+                        hasKeyWords = true;
+                    }
+                    if(appLabelLower.contains("clock")){
+                        hasKeyWords = true;
+                    }
+                    //add more later
+                    //if(appLabelLower.contains("")){
+                    //    hasKeyWords = true;
+                    //}
+                }
+                if (!MainActivity.class.getPackage().getName().equals(p.packageName)
+                        && !hasKeyWords  && !appLabelLower.contains("fitbit")) {
 
 
-                try {
                     boolean isNotBlocked = false;
                     if (whiteList.contains(p.packageName) || (isSystemApp && creatingFile)) {
                         isNotBlocked = true;
@@ -200,20 +268,28 @@ public class WhiteListView extends Activity {
                          continue;
                     }
                     */
-                    ApplicationInfo app = this.getPackageManager().getApplicationInfo(p.packageName, 0);
+                    //ApplicationInfo app = this.getPackageManager().getApplicationInfo(p.packageName, 0);
                     packageList.add(new PackageObj(app,
-                            "" + packageManager.getApplicationLabel(app),
+                            appLabel,
                             packageManager.getApplicationIcon(app),
                             p.packageName,
-                            isNotBlocked,isSystemApp));
+                            isNotBlocked, isSystemApp));
 
-
-                } catch (PackageManager.NameNotFoundException e) {
 
                 }
+                else{
+                    notListed.add(new PackageObj(app,
+                            appLabel,
+                            packageManager.getApplicationIcon(app),
+                            p.packageName,
+                            true, isSystemApp));
+                }
+            } catch (PackageManager.NameNotFoundException e) {
+
             }
         }
         Collections.sort(packageList);
+
 
 
     }
@@ -235,7 +311,7 @@ public class WhiteListView extends Activity {
                 packageTemp = (PackageObj) parent.getItemAtPosition(position);
                 cb = (CheckBox) view.findViewById(R.id.checkBox1);
                 String title, message, positive, negative;
-                if(packageTemp.getIsSystemApp()) {
+                if (packageTemp.getIsSystemApp()) {
                     if (cb.isChecked()) {
                         title = "Warning";
                         message = "This is a system app, disabling it may disrupt normal use of the device.";
@@ -293,8 +369,7 @@ public class WhiteListView extends Activity {
                         buttonPanelContainer.addView(negativeButton, positiveButtonIndex);
                     }
 
-                }
-                else{
+                } else {
                     cb.setChecked(!cb.isChecked());
                     packageTemp.setIsnotBlocked(!packageTemp.getIsNotBlocked());
 
@@ -309,9 +384,6 @@ public class WhiteListView extends Activity {
             }
         });
     }
-
-
-
 
 
     private class MyCustomAdapter extends ArrayAdapter<PackageObj> {
