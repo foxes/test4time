@@ -196,7 +196,39 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                dialog.show(getFragmentManager(), "color_dialog_test");
+                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                final View mView = getLayoutInflater().inflate(R.layout.settings, null);
+                Button whitelistBtn = (Button) mView.findViewById(R.id.AllowedAppsButton);
+                Button connectFitbitBtn = (Button) mView.findViewById(R.id.connectButton);
+                Button colorBtn = (Button) mView.findViewById(R.id.ColorButton);
+
+                colorBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    dialog.show(getFragmentManager(), "color_dialog_test");
+                    }
+                });
+
+
+                connectFitbitBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        dialog.show(getFragmentManager(), "color_dialog_test");
+                    }
+                });
+
+
+               // final EditText mEmail = (EditText) mView.findViewById(R.id.etPassword);
+                //Button mLogin = (Button) mView.findViewById(R.id.btnLogin);
+                mBuilder.setView(mView);
+                final AlertDialog dialog = mBuilder.create();
+                dialog.show();
+
+
+
+                //dialog.show(getFragmentManager(), "color_dialog_test");
             }
         });
 

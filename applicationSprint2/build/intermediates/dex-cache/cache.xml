@@ -3,102 +3,102 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\alanj_000\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
-        <dex dex="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.1_b886b8d80c8291c42b208b51abfcbca898b8ee98.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.1_994aad89a0e0093af6c0c1465bee2c6c04e59789.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jar="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.1_03b0053a2c1b321fda529abf5fbbec73f3ae1406.jar" />
+        <dex dex="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.1_941230a2db282fc2d52431c292c3e47f3d296a40.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.1.1_2a6bb007c546b53eb45f9cc522eaedc7f3b91c11.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.1.1_42365c73718645c6d26fb9992a653ee1c2c3fd37.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.1_fa5069dc0ea2d90081134e92b1ab16290d9fa9d1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.1_abf89ca00e1c4f639ef6b3ee585ff98cf9fd8c33.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.1.1_cd1b83097323a56b0c1bb49ad8ae0ee29d30493b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        jar="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.1_1b6f954def1c8e5994eb3add72b4df0ad82fee42.jar" />
+        <dex dex="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.1_690d997b5a96c834dc7bf35b21ff371ef2a56c44.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.1_3f0bdd605246c94571154bcf848063a556c1bd19.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\exploded-aar\org.xdty.preference\color-picker\0.0.4\jars\classes.jar"
+        jar="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\exploded-aar\org.xdty.preference\color-picker\0.0.4\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="39be70d494a7a493a1a2321a5c6dd3b638dda559">
-        <dex dex="C:\Users\alanj_000\Documents\GIT\test4time\applicationSprint2\app\build\intermediates\pre-dexed\debug\org.xdty.preference-color-picker-0.0.4_f0f1f766ef6aeab08ad9b2143d6fb4cb2fd68859.jar" />
+        <dex dex="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\pre-dexed\debug\org.xdty.preference-color-picker-0.0.4_0b6339fc460919fdf77f96000f66810de8552268.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.1.1_4955dc2713c309939cc52ccbd99049e2e4a128fe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.1.1_e9c4febc0c54527726833de536b85a3e6ddf5dcb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.1.1_a0d8e322b8d880877797ca6fc5ccaede8531c6a2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.1_23356f55b3823cb5470d705f58b62c10f568b8a3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.1_e2bc67c34cc421c9e30a7604efc236ae0570060e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.1_2abbe5b5ddaa12939bfcc36239eb8026f3e604b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.1_2cc5018580ae7529e4c4075424a22f505372c4d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Fenrir\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="C:\Users\Fenrir\Desktop\test4time-master\applicationSprint2\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.1_fff41d3003d48481b7fd9f928a58dd8811326ea9.jar" />
     </item>
 
 </items>

@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream
-#Mon Apr 10 22:27:44 EDT 2017
-base.0=C\:\\Users\\Fenrir\\Desktop\\sprint3 test\\test4time\\applicationSprint2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
-=======
-#Sun Apr 16 00:59:02 EDT 2017
-base.0=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\applicationSprint2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
->>>>>>> Stashed changes
+#Sun Apr 23 04:14:17 EDT 2017
+base.0=C\:\\Users\\Fenrir\\Desktop\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.0=C\:\\Users\\alanj_000\\Documents\\GIT\\test4time\\applicationSprint2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.0=C\:\\Users\\Fenrir\\Desktop\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
