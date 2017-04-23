@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Capstone</string>
+    <string name="app_name">Test4Time FIT</string>
     <string name="this_will_disable_the_lock_until_reactivated">This will disable the lock until reactivated.</string>
     <string name="confirm">Confirm</string>
     <string name="_100">100%</string>

@@ -42,6 +42,21 @@
         <activity
             android:name="com.foxes.capstone.AccessibilityRequestActivity"
             android:label="Accessibility Request" />
+        <activity
+            android:name="com.foxes.capstone.AccessTokenReceiver"
+            android:label="TestActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="logincallback"
+                    android:scheme="test4time" />
+            </intent-filter>
+        </activity>
 
         <receiver android:name="com.foxes.capstone.AutoStart" >
             <intent-filter>

@@ -4,15 +4,23 @@ package com.foxes.capstone;
 import android.app.AlarmManager;
 import android.app.AppOpsManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+
+import android.support.customtabs.CustomTabsClient;
+import android.support.customtabs.CustomTabsIntent;
+import android.support.customtabs.CustomTabsServiceConnection;
+import android.support.customtabs.CustomTabsSession;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +38,20 @@ public class MainActivity extends AppCompatActivity {
     public FitbitCommunication comm = new FitbitCommunication();
     public DateUtil dateUtil = new DateUtil();
 
+    private String url =
+
+            "https://www.fitbit.com/oauth2/authorize?" +
+                    "response_type=token" +
+                    "&client_id=2284LL" +
+                    "&expires_in=86400" +
+                    "&scope=activity%20nutrition%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight" +
+                    "&redirect_uri=test4time://logincallback" +
+                    "&prompt=login";
+
+
     public String timeStamp = "";
+
+    final String CUSTOM_TAB_PACKAGE_NAME = "com.android.chrome";
 
 
 
@@ -81,14 +102,42 @@ public class MainActivity extends AppCompatActivity {
     public static boolean isTemporarilyUnlocked ;
     public static long endOfUnlockTimestamp;
 
+    CustomTabsClient mCustomTabsClient;
+    CustomTabsSession mCustomTabsSession;
+    CustomTabsServiceConnection mCustomTabsServiceConnection;
+    CustomTabsIntent mCustomTabsIntent;
+
     SharedPreferences.Editor editor;
     SharedPreferences preferences;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        mCustomTabsServiceConnection = new CustomTabsServiceConnection() {
+            @Override
+            public void onCustomTabsServiceConnected(ComponentName componentName, CustomTabsClient customTabsClient) {
+                mCustomTabsClient= customTabsClient;
+                mCustomTabsClient.warmup(0L);
+                mCustomTabsSession = mCustomTabsClient.newSession(null);
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+                mCustomTabsClient= null;
+            }
+        };
+
+        CustomTabsClient.bindCustomTabsService(this, CUSTOM_TAB_PACKAGE_NAME, mCustomTabsServiceConnection);
+
+        mCustomTabsIntent = new CustomTabsIntent.Builder(mCustomTabsSession)
+                .setShowTitle(true)
+                .build();
+
         if (android.os.Build.VERSION.SDK_INT > 9){
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
@@ -116,8 +165,6 @@ public class MainActivity extends AppCompatActivity {
         needToStopLockingService  = preferences.getBoolean ("needToStopLockingService" ,false);
         isTemporarilyUnlocked      = preferences.getBoolean (   "isTemporarilyUnlocked", false);
         endOfUnlockTimestamp = preferences.getLong("endOfUnlockTimestamp"  ,0);
-
-
 
 
         final CircleProgressBar circleProgressBar = (CircleProgressBar) findViewById(R.id.custom_progressBar);
@@ -215,7 +262,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        dialog.show(getFragmentManager(), "color_dialog_test");
+
+                        mCustomTabsIntent.launchUrl(MainActivity.this, Uri.parse(url));
+
+
                     }
                 });
 

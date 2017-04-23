@@ -28,7 +28,8 @@ public class FitbitCommunication implements Runnable{
     private int month;
     private int date;
 
-    private final String URL = " Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0QzJNNUsiLCJhdWQiOiIyMjg5OEMiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJzZXQgcmFjdCBybG9jIHJ3ZWkgcmhyIHJudXQgcnBybyByc2xlIiwiZXhwIjoxNDkyNDcyMzQxLCJpYXQiOjE0OTE4Njc1NDF9.Y6W1zWyzPdMejzFxA3XZy6UhsQYuFPwnLRifmQL3igo";
+    private final String URL = AccessTokenReceiver.TokenParsed;
+
     public void connectToFitbit() {
 
         try {

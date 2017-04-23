@@ -32,6 +32,19 @@
             android:name="AccessibilityRequestActivity"
             android:label="Accessibility Request" />
 
+
+        <activity
+            android:name=".AccessTokenReceiver"
+            android:label="TestActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="test4time" android:host="logincallback" />
+            </intent-filter>
+        </activity>
+
         <receiver android:name=".AutoStart">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -41,6 +54,8 @@
         <receiver android:name=".AlarmNotificationReceiver"/>
         <receiver android:name=".AlarmToastReceiver"/>
         <receiver android:name=".AlarmLockerReset"/>
+
+
     </application>
 
     <uses-permission xmlns:tools="http://schemas.android.com/tools"
