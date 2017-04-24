@@ -35,8 +35,8 @@ public class FitbitCommunication implements Runnable{
         try {
             DateUtil dateUtil = new DateUtil();
             System.out.println("connectToFitbit started");
-            URL link = new URL("https://api.fitbit.com/1/user/-/activities/date/2017-04-10.json");
-            //URL link = new URL("https://api.fitbit.com/1/user/-/activities/date/" + dateUtil.getYear() + "-" + dateUtil.getMonth() + "-" + dateUtil.getDay() + ".json");
+            //URL link = new URL("https://api.fitbit.com/1/user/-/activities/date/2017-04-10.json");
+            URL link = new URL("https://api.fitbit.com/1/user/-/activities/date/" + dateUtil.getYear() + "-" + dateUtil.getMonth() + "-" + dateUtil.getDay() + ".json");
             System.out.println("Link: " + link);
 
             HttpURLConnection conn = (HttpURLConnection) link.openConnection();

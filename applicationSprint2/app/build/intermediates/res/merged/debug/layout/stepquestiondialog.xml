@@ -21,8 +21,9 @@
         android:ems="10"
         android:gravity="center"
         android:id="@+id/etPassword"
-        android:inputType="numberDecimal"
-        android:hint="0000" />
+        android:hint="0000"
+        android:inputType="numberPassword" />
+
 
     <Button
         android:text="Confirm"

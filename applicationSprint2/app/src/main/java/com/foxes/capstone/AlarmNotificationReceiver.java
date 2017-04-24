@@ -27,7 +27,7 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
                 .setContentTitle("Test4Time")
                 .setContentText(MainActivity.lockDisableTime + " minute(s) remaining!")
                 .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE)
-                .setContentInfo("hi :)");
+                .setContentInfo("Warning!");
         builder.setPriority(android.support.v4.app.NotificationCompat.PRIORITY_HIGH);
 
 

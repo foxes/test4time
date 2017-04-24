@@ -8,12 +8,12 @@
         "source": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_fade_in.xml"
-    },
-    {
         "merged": "C:\\Users\\Fenrir\\Desktop\\test4time-alan_locker_branch_2\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
         "source": "C:\\Users\\Fenrir\\Desktop\\test4time-alan_locker_branch_2\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_fade_in.xml"
     },
     {
         "merged": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
@@ -32,8 +32,16 @@
         "source": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTestingCopy2\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
         "merged": "C:\\Users\\Fenrir\\Desktop\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
         "source": "C:\\Users\\Fenrir\\Desktop\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_out_top.xml"
     },
     {
         "merged": "C:\\Users\\Fenrir\\Desktop\\test4time-alan_locker_branch_2\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
@@ -116,6 +124,10 @@
         "source": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTestingCopy2\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_fade_in.xml"
+    },
+    {
         "merged": "C:\\Users\\Fenrir\\Desktop\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
         "source": "C:\\Users\\Fenrir\\Desktop\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_in_bottom.xml"
     },
@@ -156,8 +168,16 @@
         "source": "C:\\Users\\Fenrir\\Desktop\\sprint3 test\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_popup_exit.xml"
     },
     {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
         "merged": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTestingCopy2\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
         "source": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTestingCopy2\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
         "merged": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTesting\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
@@ -178,6 +198,10 @@
     {
         "merged": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTestingCopy2\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
         "source": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTestingCopy2\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_in_top.xml"
     },
     {
         "merged": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
@@ -208,6 +232,10 @@
         "source": "C:\\Users\\Fenrir\\Desktop\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
         "merged": "C:\\Users\\Fenrir\\Desktop\\sprint3 test\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
         "source": "C:\\Users\\Fenrir\\Desktop\\sprint3 test\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_popup_enter.xml"
     },
@@ -226,6 +254,10 @@
     {
         "merged": "C:\\Users\\Fenrir\\Desktop\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
         "source": "C:\\Users\\Fenrir\\Desktop\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_popup_enter.xml"
     },
     {
         "merged": "C:\\Users\\Fenrir\\Desktop\\test4time-alan_locker_branch_2\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
@@ -268,6 +300,10 @@
         "source": "C:\\Users\\alanj_000\\Documents\\GIT\\test4timeTestingCopy2\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_popup_exit.xml"
     },
     {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_fade_out.xml"
+    },
+    {
         "merged": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
         "source": "C:\\Users\\Fenrir\\Desktop\\test4timeNEWEST\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
@@ -278,5 +314,9 @@
     {
         "merged": "C:\\Users\\Fenrir\\Desktop\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
         "source": "C:\\Users\\Fenrir\\Desktop\\test4time-master\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\Fenrir\\Desktop\\pokea\\test4time\\applicationSprint2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_popup_exit.xml"
     }
 ]

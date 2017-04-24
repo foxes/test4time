@@ -20,6 +20,7 @@ public class DateUtil {
     public int getMonth(){
 
         int month = cal.get(Calendar.MONTH);
+        month = month+1;
         return month;
     }
 
